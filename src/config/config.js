@@ -5,6 +5,7 @@ export default {
   parent: 'phaser-container',
   width: 800,
   height: 600,
+  backgroundColor: "black",
   autoCenter: Phaser.Scale.CENTER_BOTH,
   dom: {
     createContainer: true,
@@ -15,4 +16,7 @@ export default {
       gravity: { x: 0, y: 0 },
     },
   },
+  scene: [],
+  pixelArt: true,
+  roundPixels: true
 };
