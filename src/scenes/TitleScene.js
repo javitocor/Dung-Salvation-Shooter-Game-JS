@@ -8,7 +8,7 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create () {
-    //this.add.image(400, 300, 'background');
+    this.add.image(400, 300, 'bg1');
     //var sprite = this.add.image(400, 600, 'logo');
     //sprite.setScale(0.5);
     //sprite.alpha = 0.2;
