@@ -10,10 +10,8 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload () {
-    // add logo image
     this.add.image(400, 200, 'logo');
 
-    // display progress bar
     var progressBar = this.add.graphics();
     var progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
@@ -54,7 +52,6 @@ export default class PreloaderScene extends Phaser.Scene {
     });
     assetText.setOrigin(0.5, 0.5);
 
-    // update progress bar
     this.load.on('progress', function (value) {
       percentText.setText(parseInt(value * 100) + '%');
       progressBar.clear();
@@ -62,12 +59,10 @@ export default class PreloaderScene extends Phaser.Scene {
       progressBar.fillRect(250, 280, 300 * value, 30);
     });
 
-    // update file progress text
     this.load.on('fileprogress', function (file) {
       assetText.setText('Loading asset: ' + file.key);
     });
 
-    // remove progress bar when complete
     this.load.on('complete', function () {
       progressBar.destroy();
       progressBox.destroy();
@@ -79,13 +74,29 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    // load assets needed in our game
     this.load.image('blueButton1', 'assets/ui/blue_button02.png');
     this.load.image('blueButton2', 'assets/ui/blue_button03.png');
     this.load.image('phaserLogo', 'assets/logo.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', 'assets/TownTheme.mp3');
+    this.load.image('boss', 'assets/game/boss.PNG');
+    this.load.image('carrier', 'assets/game/carrier.png');
+    this.load.image('destroyer', 'assets/game/destroyer.png');
+    this.load.image('fighter', 'assets/game/fighter.png');
+    this.load.image('playerShip', 'assets/game/playerShip.png');
+    this.load.image('bg1', 'assets/game/Space-Background-2.jpg');
+    this.load.image('bg2', 'assets/game/Space-Background-3.jpg');
+    this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');
+    this.load.image('laserPlayer', 'assets/game/sprLaserPlayer.png');
+    this.load.spritesheet('explosion', 'assets/game/explosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.audio('bgMusic', 'assets/Daft Punk - Best of - 11 Aerodynamic.mp3');
+    this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
+    this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
+    this.load.audio('laser', 'assets/game/sndLaser.wav');
+    
   }
 
   ready () {
