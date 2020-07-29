@@ -1,7 +1,7 @@
 {
   "name": "Dung-Salvation-Shooter-Game-JS",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shooter game built with Javascript using Phaser and Webpack. Capstone Project for Microverse on the top of my Javascript knowledge.",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
