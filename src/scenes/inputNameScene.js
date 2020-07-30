@@ -20,7 +20,7 @@ export default class InputNameScene extends Phaser.Scene {
 
     element.on('click', function (event) {
 
-      if (event.target.name === 'playButton') {
+      if (event.target.name === 'submitButton') {
         let inputText = this.getChildByName('nameField');
 
 
