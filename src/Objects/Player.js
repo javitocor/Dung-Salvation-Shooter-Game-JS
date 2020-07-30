@@ -7,7 +7,7 @@ export default class Player extends Entity {
     super(scene, x, y, key, "Player");
 
     this.setData("speed", 200);
-
+    this.lives = 3;
     this.setData("isShooting", false);
     this.setData("timerShootDelay", 10);
     this.setData("timerShootTick", this.getData("timerShootDelay") - 1);

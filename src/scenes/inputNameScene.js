@@ -9,10 +9,7 @@ export default class InputNameScene extends Phaser.Scene {
   create() { 
     this.add.image(400, 300, 'bg2');   
     let score = window.localStorage.getItem('score');
-    let text = this.add.text(300, 10, 'Please enter your name', {
-      color: 'white',
-      fontSize: '20px '
-    });
+    let text = this.add.bitmapText(300, 10, 'arcade', 'Please enter your name', 18).setTint(0x08B0F8);
 
     let element = this.add.dom(400, 0).createFromCache('nameform');
 

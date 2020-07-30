@@ -11,6 +11,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    let life1 = this.add.image(750, 50, 'playerShip').setDisplaySize(50, 50);
+    let life2 = this.add.image(700, 50, 'playerShip').setDisplaySize(50, 50);
+    let life3 = this.add.image(650, 50, 'playerShip').setDisplaySize(50, 50);
     let score = 0;
     const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
     
@@ -21,40 +24,12 @@ export default class GameScene extends Phaser.Scene {
       repeat: 0
     });
 
-    this.anims.create({
-      key: "playerShip",
-      frames: this.anims.generateFrameNumbers("playerShip"),
-      frameRate: 20,
-      repeat: -1
-    });
-
-    this.anims.create({
-      key: "fighter",
-      frames: this.anims.generateFrameNumbers("fighter"),
-      frameRate: 20,
-      repeat: -1
-    });
-
-    this.anims.create({
-      key: "destroyer",
-      frames: this.anims.generateFrameNumbers("destroyer"),
-      frameRate: 20,
-      repeat: -1
-    });
-
-    this.anims.create({
-      key: "carrier",
-      frames: this.anims.generateFrameNumbers("carrier"),
-      frameRate: 20,
-      repeat: -1
-    });
-
     this.sfx = {
       explosions: [
-        this.sound.add("explosion1"),
-        this.sound.add("explosion2")
+        this.sound.add("explosion1", { volume: 0.7 }),
+        this.sound.add("explosion2", { volume: 0.7 })
       ],
-      laser: this.sound.add("laser")
+      laser: this.sound.add("laser", { volume: 0.5 })
     };
 
     this.backgrounds = [];
@@ -140,25 +115,33 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.overlap(this.player, this.enemies, function (player, enemy) {
       if (!player.getData("isDead") &&
         !enemy.getData("isDead")) {
-        player.explode(false);
-        player.onDestroy();
+        //player.explode(false);
+        //player.onDestroy();
         enemy.explode(true);
+        if(player.lives > 0) {
+          player.lives--;
+        } else {
+          player.explode(false);
+          player.onDestroy();
+        }
       }
     });
 
     this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
-      if (!player.getData("isDead") &&
-        !laser.getData("isDead")) {
-        player.explode(false);
-        player.onDestroy();
-        laser.destroy();
+      if (!player.getData("isDead") && !laser.getData("isDead")) {
+          player.lives--;
+          laser.destroy();          
+          if(player.lives === 0){
+            player.explode(false);
+            player.onDestroy();
+          }
       }
     });
 
     this.physics.add.collider(this.enemyLasers, this.playerLasers, (enemyLaser, playerLaser) => {
       if (playerLaser) {
         score += 5;
-        playerLaser.explode(false, 'sprExplosionLaser');
+        playerLaser.explode(false/*, 'sprExplosionLaser'*/);
         enemyLaser.destroy();
         window.localStorage.setItem('score', JSON.stringify(score));
         scoreBoard.text = `Score: ${score}`;
@@ -178,6 +161,14 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update() {
+
+    if (this.player.lives === 2) {
+      life3.destroy();
+    } else if (this.player.lives === 1) {
+      life2.destroy();
+    } else if (this.player.lives === 0) {
+      life1.destroy();
+    }
 
     if (!this.player.getData("isDead")) {
       this.player.update();
