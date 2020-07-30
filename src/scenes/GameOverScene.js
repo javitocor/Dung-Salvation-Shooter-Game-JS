@@ -1,6 +1,9 @@
 import ScrollingBackground from '../scrolling';
+import Phaser from 'phaser';
+import config from '../config/config';
+import Button from '../Objects/Button';
 
-export default class GameOver extends Phaser.Scene {
+export default class GameOverScene extends Phaser.Scene {
   constructor() {
     super({ key: "GameOver" });
   }
@@ -10,7 +13,7 @@ export default class GameOver extends Phaser.Scene {
     this.load.image('blueButton2', 'assets/ui/blue_button03.png');
   }
   create() {
-
+    this.cameras.main.setBackgroundColor('#000111');
     this.title = this.add.text(this.game.config.width * 0.5, 128, "GAME OVER", {
       fontFamily: 'monospace',
       fontSize: 48,
