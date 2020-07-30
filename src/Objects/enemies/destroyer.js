@@ -1,4 +1,5 @@
-import EnemyLaser from '../helpers/enemyLaser';
+import EnemyLaser from '../../helpers/enemyLaser';
+import Entity from '../Entities';
 
 export default class Destroyer extends Entity {
   constructor(scene, x, y) {

@@ -1,3 +1,5 @@
+import Entity from '../Entities';
+
 export default class CarrierShip extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, "carrier", "CarrierShip");

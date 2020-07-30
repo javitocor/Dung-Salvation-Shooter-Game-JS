@@ -1,3 +1,5 @@
+import Entity from '../Entities';
+
 export default class Fighter extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, "fighter", "fighter");

@@ -1,4 +1,5 @@
 import 'phaser';
+import Player from '../Objects/Player';
 import ScrollingBackground from '../scrolling';
 import Destroyer from '../Objects/enemies/destroyer';
 import Fighter from '../Objects/enemies/fighter';
@@ -36,7 +37,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
-    this.add.image(400, 300, 'logo');
     this.anims.create({
       key: "explosion",
       frames: this.anims.generateFrameNumbers("explosion"),
@@ -44,9 +44,17 @@ export default class GameScene extends Phaser.Scene {
       repeat: 0
     });
 
+    this.sfx = {
+      explosions: [
+        this.sound.add("explosion1"),
+        this.sound.add("explosion2")
+      ],
+      laser: this.sound.add("laser")
+    };
+
     this.backgrounds = [];
     for (var i = 0; i < 5; i++) {
-      var bg = new ScrollingBackground(this, "sprBg0", i * 10);
+      var bg = new ScrollingBackground(this, "bg1", i * 10);
       this.backgrounds.push(bg);
     }
 
