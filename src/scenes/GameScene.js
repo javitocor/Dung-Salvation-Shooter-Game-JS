@@ -11,9 +11,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    this.score = 0;
-    this.scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${this.score}`, 14).setTint(0x08B0F8);
-    console.log(this.scoreBoard);
+    let score = 0;
+    const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
+    
     this.anims.create({
       key: "explosion",
       frames: this.anims.generateFrameNumbers("explosion"),
@@ -120,19 +120,20 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) {
       if (enemy) {
         if (enemy instanceof Destroyer) {
-          this.score += 100;
+          score += 100;
         } else if (enemy instanceof Fighter) {
-          this.score += 75;
+          score += 75;
         } else if (enemy instanceof CarrierShip) {
-          this.score += 125;
+          score += 125;
         }
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
-          this.score += 25;
+          score += 25;
         }
         enemy.explode(true);
         playerLaser.destroy();
-        this.scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${this.score}`, 14).setTint(0x08B0F8);
+        window.localStorage.setItem('score', JSON.stringify(score));
+        scoreBoard.text = `Score: ${score}`;
       }
     });
 
@@ -156,10 +157,11 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.collider(this.enemyLasers, this.playerLasers, (enemyLaser, playerLaser) => {
       if (playerLaser) {
-        this.score += 5;
-        this.scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${this.score}`, 14).setTint(0x08B0F8);
+        score += 5;
         playerLaser.explode(false, 'sprExplosionLaser');
         enemyLaser.destroy();
+        window.localStorage.setItem('score', JSON.stringify(score));
+        scoreBoard.text = `Score: ${score}`;
       }
     });
   }
@@ -176,8 +178,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update() {
-
-    this.scoreBoard.text = `Score: ${this.score}`;
 
     if (!this.player.getData("isDead")) {
       this.player.update();

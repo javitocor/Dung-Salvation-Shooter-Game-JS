@@ -97,10 +97,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('playerShip', 'assets/game/playerShip.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
+    this.load.image('playerShip', 'assets/game/playerShip.png');
     this.load.image('bg1', 'assets/game/Space-Background-2.jpg');
     this.load.image('bg2', 'assets/game/Space-Background-3.jpg');
     this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');

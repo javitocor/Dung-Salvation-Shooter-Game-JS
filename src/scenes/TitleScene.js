@@ -25,7 +25,7 @@ export default class TitleScene extends Phaser.Scene {
       this.sys.game.globals.bgMusic = this.bgMusic;
     }
 
-    this.title = this.add.bitmapText(this.game.config.width * 0.5, 128, 'arcade', "DUNG SALVATION", 48);
+    this.title = this.add.bitmapText(this.game.config.width * 0.5, 128, 'arcade', "DUNG SALVATION", 44);
     this.title.setOrigin(0.5);
   }
 };

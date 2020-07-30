@@ -10,6 +10,15 @@ export default {
   dom: {
     createContainer: true,
   },
+	plugins: {
+		scene: [
+			{
+				key: 'rexUI',
+				plugin: RexUIPlugin,
+				mapping: 'rexUI'
+			}
+		]
+  },
   physics: {
     default: 'arcade',
     arcade: {
