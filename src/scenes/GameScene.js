@@ -113,6 +113,7 @@ export default class GameScene extends Phaser.Scene {
       callbackScope: this,
       loop: true
     });
+    
     let score = 0;
     let scoreText;
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });

@@ -11,7 +11,7 @@ export default class IntroScene extends Phaser.Scene {
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     this.skipText = this.add.text(10, 10, 'Press SPACE\nto skip', { fontSize: '10px', fill: '#fff' });
     this.titleText = this.add.text(0, 0, 'Dung Salvation', { fontSize: '32px', fill: '#fff' });    
-    this.introText = this.add.text(0, 0, 'It is a period of civil war.The evil Rebel spaceships, striking from a hidden base, have won their first victory against the Galactic Democratic System. During the battle, Rebel spies managed to hijack a galactic shuttle with Princess Dung on board. Princess Dung custodian important information that might end with the war and restore the peace and freedom to the galaxy. The Galactic Democratic Governement has send a secret mission lead by the best pilot in the galaxy, Captain Tintin, to rescue the Princess and bring her back so the war will end.', { fontSize: '26px', fill: '#fff' });
+    this.introText = this.add.text(0, 0, 'It is a period of civil war.\nThe evil Rebel spaceships, striking from a hidden base,\n have won their first victory against the Galactic Democratic System.\n During the battle, Rebel spies managed\n to hijack a galactic shuttle with Princess Dung on board.\n Princess Dung custodian important information that might end\n with the war and restore the peace and freedom to the galaxy.\n The Galactic Democratic Governement has send a secret mission lead by the best pilot in the galaxy,\n Captain Tintin, to rescue the Princess and bring her back so the war will end.', { fontSize: '26px', fill: '#fff' });
     this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
     this.introText.setY(850);
 
