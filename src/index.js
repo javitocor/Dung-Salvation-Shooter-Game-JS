@@ -2,6 +2,7 @@ import 'phaser';
 import config from './Config/config';
 import GameScene from './Scenes/GameScene';
 import IntroScene from './Scenes/introScene';
+import LeaderboardScene from './Scenes/leaderboardScene';
 import GameOverScene from './Scenes/GameOverScene';
 import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
@@ -23,6 +24,7 @@ class Game extends Phaser.Game {
     this.scene.add('Game', GameScene);
     this.scene.add('Intro', IntroScene);
     this.scene.add('GameOver', GameOverScene);
+    this.scene.add('Leaderboard', LeaderboardScene);
     this.scene.start('Boot');
   }
 }

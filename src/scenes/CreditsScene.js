@@ -8,12 +8,12 @@ export default class CreditsScene extends Phaser.Scene {
 
   create() {
     this.cameras.main.setBackgroundColor('#000111');
-    this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });    
-    this.madeByText1 = this.add.text(0, 0, 'Created By: Javier Correas', { fontSize: '26px', fill: '#fff' });
-    this.madeByText2 = this.add.text(0, 0, "Thanks to Microverse", { fontSize: '26px', fill: '#fff' });
+    this.creditsText = this.add.bitmapText(0, 0,'arcade', 'Credits', 32);    
+    this.madeByText1 = this.add.bitmapText(0, 0,'arcade', 'Created By: Javier Correas', 26);
+    this.madeByText2 = this.add.bitmapText(0, 0,'arcade', "Thanks to Microverse", 26);
     this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    this.skipText = this.add.text(10, 10, 'Press SPACE\nto skip', { fontSize: '10px', fill: '#fff' });
+    this.skipText = this.add.text(10, 10,'arcade', 'Press SPACE\nto skip', 10);
 
     Phaser.Display.Align.In.Center(
       this.creditsText,

@@ -74,16 +74,33 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
+    this.load.bitmapFont('arcade', 'assets/arcade.png', 'assets/arcade.xml');
+
     this.load.image('logo', 'assets/logo.png');
     this.load.image('blueButton1', 'assets/ui/blue_button02.png');
     this.load.image('blueButton2', 'assets/ui/blue_button03.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
-    this.load.image('boss', 'assets/game/boss.PNG');
-    this.load.image('carrier', 'assets/game/carrier.png');
-    this.load.image('destroyer', 'assets/game/destroyer.png');
-    this.load.image('fighter', 'assets/game/fighter.png');
-    this.load.image('playerShip', 'assets/game/playerShip.png');
+    this.load.spritesheet('boss', 'assets/game/boss.PNG', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('carrier', 'assets/game/carrier.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('destroyer', 'assets/game/destroyer.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('fighter', 'assets/game/fighter.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('playerShip', 'assets/game/playerShip.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
     this.load.image('bg1', 'assets/game/Space-Background-2.jpg');
     this.load.image('bg2', 'assets/game/Space-Background-3.jpg');
     this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');
