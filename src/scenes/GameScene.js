@@ -113,11 +113,15 @@ export default class GameScene extends Phaser.Scene {
       callbackScope: this,
       loop: true
     });
-
+    let score = 0;
+    let scoreText;
+    scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
+          score += 10;
+          scoreText.setText('Score: ' + score);
         }
         enemy.explode(true);
         playerLaser.destroy();
