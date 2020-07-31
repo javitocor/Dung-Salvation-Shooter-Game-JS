@@ -32,10 +32,13 @@ export default class Boss extends Entity {
         );
         missile.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile);
+        this.scene.sfx.missile.play(); 
         missile2.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile2);
+        this.scene.sfx.missile.play();
         missile3.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile3);
+        this.scene.sfx.missile.play();
       },
       callbackScope: this,
       loop: true

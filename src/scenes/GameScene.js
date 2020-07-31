@@ -34,9 +34,10 @@ export default class GameScene extends Phaser.Scene {
         this.sound.add("explosion1", { volume: 0.7 }),
         this.sound.add("explosion2", { volume: 0.7 })
       ],
-      laser: this.sound.add("laser", { volume: 0.5 })
+      laser: this.sound.add("laser", { volume: 0.5 }),
+      missile: this.sound.add('missile', { volume: 0.2 })
     };
-
+ 
     this.backgrounds = [];
     for (var i = 0; i < 2; i++) {
       var bg = new ScrollingBackground(this, "bg1", i * 10);

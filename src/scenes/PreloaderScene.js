@@ -81,27 +81,16 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('blueButton2', 'assets/ui/blue_button03.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
-    this.load.spritesheet('boss', 'assets/game/boss.PNG', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-    this.load.spritesheet('carrier', 'assets/game/carrier.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-    this.load.spritesheet('destroyer', 'assets/game/destroyer.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-    this.load.spritesheet('fighter', 'assets/game/fighter.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
+    this.load.image('boss', 'assets/game/boss.PNG');
+    this.load.image('carrier', 'assets/game/carrier.png');
+    this.load.image('destroyer', 'assets/game/destroyer.png');
+    this.load.image('fighter', 'assets/game/fighter.png');
     this.load.image('playerShip', 'assets/game/playerShip.png');
     this.load.image('bg1', 'assets/game/Space-Background-2.jpg');
     this.load.image('bg2', 'assets/game/Space-Background-3.jpg');
     this.load.image('starfield', 'assets/game/starfield.png');
     this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');
+    this.load.image('missile', 'assets/game/missile.png');
     this.load.image('laserPlayer', 'assets/game/sprLaserPlayer.png');
     this.load.spritesheet('explosion', 'assets/game/explosion.png', {
       frameWidth: 32,
@@ -111,6 +100,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
     this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
     this.load.audio('laser', 'assets/game/sndLaser.wav');
+    this.load.audio('missile', 'assets/game/missile.ogg');
 
     this.load.html('nameform', 'assets/text/nameform.html');
     
