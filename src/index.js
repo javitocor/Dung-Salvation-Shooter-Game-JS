@@ -11,6 +11,7 @@ import TitleScene from './Scenes/TitleScene';
 import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import EndGameScene from './Scenes/endGameScene';
+import DialogueScene from './Scenes/dialogueScene';
 import Sound from './model/sound';
 
 class Game extends Phaser.Game {
@@ -30,6 +31,9 @@ class Game extends Phaser.Game {
     this.scene.add('InputName', InputNameScene);
     this.scene.add('EndGame', EndGameScene);
     this.scene.start('Boot');
+    this.scene.add('DialogueIntro', new DialogueScene());
+    this.scene.add('DialogueBoss', new DialogueScene());
+    this.scene.add('DialogueFinal', new DialogueScene());    
   }
 }
 

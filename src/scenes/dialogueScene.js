@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import createLabel from '../createLabel';
 
-export default class Dialogue extends Phaser.Scene {
+export default class DialogueScene extends Phaser.Scene {
   constructor(scene, title, content, description) {
     super(scene)
     this.title = title;
@@ -68,10 +68,10 @@ export default class Dialogue extends Phaser.Scene {
       .on('button.click', function (button, groupName, index, pointer, event) {
         this.print.text += groupName + '-' + index + ': ' + button.text + '\n';
       }, this)
-      .on('button.over', function (button, groupName, index, pointer, event) {
+      .on('button.over', ()=> {
         button.getElement('background').setStrokeStyle(1, 0xffffff);
       })
-      .on('button.out', function (button, groupName, index, pointer, event) {
+      .on('button.out', ()=> {
         button.getElement('background').setStrokeStyle();
       });
   }
