@@ -188,6 +188,16 @@ export default class GameScene extends Phaser.Scene {
         scoreBoard.text = `Score: ${score}`;
       }
     });
+
+    this.physics.add.collider(this.enemyMissiles, this.playerLasers, (enemyMissile, playerLaser) => {
+      if (playerLaser) {
+        score += 5;
+        playerLaser.explode(false);
+        enemyMissile.destroy();
+        window.localStorage.setItem('score', JSON.stringify(score));
+        scoreBoard.text = `Score: ${score}`;
+      }
+    });
   }
 
   getEnemiesByType(type) {

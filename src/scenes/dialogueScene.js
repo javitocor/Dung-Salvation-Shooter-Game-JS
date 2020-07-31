@@ -66,11 +66,13 @@ export default class DialogueScene extends Phaser.Scene {
     this.print = this.add.text(0, 0, '');
     dialog
       .on('button.click', () => {
-        if(this.boss){
+        console.log(this.boss);
+        if(this.boss === true){
           this.scene.stop();
           this.scene.resume(this.nextScene);
-        }
-        this.scene.start(this.nextScene);
+        } else {
+          this.scene.start(this.nextScene);
+        }        
       })
       .on('button.over', ()=> {
         button.getElement('background').setStrokeStyle(1, 0xffffff);
