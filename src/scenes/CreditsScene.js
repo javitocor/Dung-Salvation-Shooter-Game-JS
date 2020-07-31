@@ -13,7 +13,7 @@ export default class CreditsScene extends Phaser.Scene {
     this.madeByText2 = this.add.bitmapText(0, 0,'arcade', "Thanks to Microverse", 26);
     this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    this.skipText = this.add.text(10, 10,'arcade', 'Press SPACE\nto skip', 10);
+    this.skipText = this.add.bitmapText(10, 10,'arcade', 'Press SPACE\nto skip', 8);
 
     Phaser.Display.Align.In.Center(
       this.creditsText,

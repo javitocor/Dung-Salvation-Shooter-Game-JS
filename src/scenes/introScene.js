@@ -30,8 +30,8 @@ export default class IntroScene extends Phaser.Scene {
     this.introTween1 = this.tweens.add({
       targets: this.introText,
       y: -200,
-      duration: 8000,
-      delay: 2000,
+      duration: 16000,
+      delay: 1000,
       onComplete: (() => {
         this.scene.start('Game');
       }),

@@ -3,8 +3,9 @@ import Entity from '../Entities';
 import EnemyMissile from '../../helpers/enemyMissile';
 
 export default class Boss extends Entity {
-  constructor(scene, x, y) {
+  constructor(scene) {
     super(scene, 400, 80, "boss", "Boss");
+    this.scene = scene;
     this.play("boss");
     this.lifes = 15;
     
@@ -19,19 +20,38 @@ export default class Boss extends Entity {
           this.x,
           this.y
         );
+        var missile2 = new EnemyMissile(
+          this.scene,
+          this.x + 25,
+          this.y + 25
+        );
+        var missile3 = new EnemyMissile(
+          this.scene,
+          this.x - 25,
+          this.y - 25
+        );
         missile.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile);
+        missile2.setScale(this.scaleX);
+        this.scene.enemyMissiles.add(missile2);
+        missile3.setScale(this.scaleX);
+        this.scene.enemyMissiles.add(missile3);
       },
       callbackScope: this,
       loop: true
     });
   }
-
+  
   onDestroy() {
-    if (this.shootTimer !== undefined) {
-      if (this.shootTimer) {
-        this.shootTimer.remove(false);
-      }
-    }
-  }
+    console.log(this.scene);
+    this.scene.time.addEvent({ 
+        delay: 1000,
+        callback: () => {   
+          console.log(this.scene);   
+          this.scene.start('EndGame');
+        },
+        callbackScope: this,
+        loop: false
+    });
+}
 }

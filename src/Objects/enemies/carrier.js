@@ -6,7 +6,7 @@ export default class CarrierShip extends Entity {
     super(scene, x, y, "carrier", "CarrierShip");
     this.play("carrier");
 
-    this.body.velocity.y = Phaser.Math.Between(40, 900);
+    this.body.velocity.y = Phaser.Math.Between(50, 250);
     
     this.shootTimer = this.scene.time.addEvent({
       delay: 1500,
