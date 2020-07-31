@@ -6,12 +6,12 @@ import IntroScene from './Scenes/introScene';
 import LeaderboardScene from './Scenes/leaderboardScene';
 import GameOverScene from './Scenes/GameOverScene';
 import BootScene from './Scenes/BootScene';
-import PreloaderScene from './Scenes/PreloaderScene';
-import TitleScene from './Scenes/TitleScene';
-import OptionsScene from './Scenes/OptionsScene';
-import CreditsScene from './Scenes/CreditsScene';
-import EndGameScene from './Scenes/endGameScene';
-import DialogueScene from './Scenes/dialogueScene';
+import PreloaderScene from './scenes/PreloaderScene';
+import TitleScene from './scenes/TitleScene';
+import OptionsScene from './scenes/OptionsScene';
+import CreditsScene from './scenes/CreditsScene';
+import EndGameScene from './scenes/endGameScene';
+import DialogueScene from './scenes/dialogueScene';
 import Sound from './model/sound';
 
 class Game extends Phaser.Game {
@@ -31,9 +31,9 @@ class Game extends Phaser.Game {
     this.scene.add('InputName', InputNameScene);
     this.scene.add('EndGame', EndGameScene);
     this.scene.start('Boot');
-    this.scene.add('DialogueIntro', new DialogueScene());
-    this.scene.add('DialogueBoss', new DialogueScene());
-    this.scene.add('DialogueFinal', new DialogueScene());    
+    this.scene.add('DialogueIntro', new DialogueScene('DialogueIntro', 'Mission 1', 'Space Battle', 'Captain Tintin is heading to Magrathea,\nwhere the Rebels base is.\nBut it is well protected, the fight begins...', 'Game'));
+    this.scene.add('DialogueBoss', new DialogueScene('DialogueBoss', 'Final Boss', 'Defeat the Rebels Boss', 'Defeat the boss to save the Princess Dung!', 'Game', true));
+    this.scene.add('DialogueFinal', new DialogueScene('DialogueFinal', 'Rescue', 'You saved the Galaxy!', 'Success! You have rescued\nthe Princess Dung and\nsaved the Galaxy\nCongratulations!!!', 'EndGame'));    
   }
 }
 

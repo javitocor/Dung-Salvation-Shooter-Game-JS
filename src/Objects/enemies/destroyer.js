@@ -13,13 +13,13 @@ export default class Destroyer extends Entity {
       callback: function() {
         var laser = new EnemyLaser(
           this.scene,
-          this.x,
-          this.y
+          this.x - 2,
+          this.y - 2
         );
         var laser2 = new EnemyLaser(
           this.scene,
-          this.x,
-          this.y
+          this.x + 2,
+          this.y + 2
         );
         laser.setScale(this.scaleX);
         this.scene.enemyLasers.add(laser);

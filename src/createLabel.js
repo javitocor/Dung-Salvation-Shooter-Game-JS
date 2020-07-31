@@ -17,3 +17,5 @@ const createLabel = function (scene, text) {
       }
   });
 }
+
+export default createLabel;

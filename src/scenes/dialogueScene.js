@@ -2,34 +2,34 @@ import Phaser from 'phaser';
 import createLabel from '../createLabel';
 
 export default class DialogueScene extends Phaser.Scene {
-  constructor(scene, title, content, description) {
+  constructor(scene, title, content, description, nextScene, boss = false) {
     super(scene)
     this.title = title;
     this.content = content;
     this.description = description;
+    this.nextScene = nextScene;
+    this.boss = boss;
   }
 
   create() {
+    this.add.image(400, 300, 'bg2').setDisplaySize(800, 600);
     var dialog = this.rexUI.add.dialog({
         x: 400,
         y: 300,
         width: 500,
-        background: this.rexUI.add.roundRectangle(0, 0, 100, 100, 20, 0x1565c0),
+        background: this.rexUI.add.roundRectangle(0, 0, 100, 100, 20, 0x08B0F8),
         title: createLabel(this, this.title).setDraggable(),
         content: createLabel(this, this.content), 
         description: createLabel(this, this.description),       
-        actions: createLabel(this, 'Go!'),
+        actions: [createLabel(this, 'Go!')],
         space: {
           left: 20,
           right: 20,
           top: -20,
           bottom: -20,
           title: 25,
-          titleLeft: 30,
           content: 25,
           description: 25,
-          descriptionLeft: 20,
-          descriptionRight: 20,
           choices: 25,
           toolbarItem: 5,
           choice: 15,
@@ -65,9 +65,13 @@ export default class DialogueScene extends Phaser.Scene {
 
     this.print = this.add.text(0, 0, '');
     dialog
-      .on('button.click', function (button, groupName, index, pointer, event) {
-        this.print.text += groupName + '-' + index + ': ' + button.text + '\n';
-      }, this)
+      .on('button.click', () => {
+        if(this.boss){
+          this.scene.stop();
+          this.scene.resume(this.nextScene);
+        }
+        this.scene.start(this.nextScene);
+      })
       .on('button.over', ()=> {
         button.getElement('background').setStrokeStyle(1, 0xffffff);
       })

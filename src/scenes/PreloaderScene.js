@@ -100,6 +100,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('playerShip', 'assets/game/playerShip.png');
     this.load.image('bg1', 'assets/game/Space-Background-2.jpg');
     this.load.image('bg2', 'assets/game/Space-Background-3.jpg');
+    this.load.image('starfield', 'assets/game/starfield.png');
     this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');
     this.load.image('laserPlayer', 'assets/game/sprLaserPlayer.png');
     this.load.spritesheet('explosion', 'assets/game/explosion.png', {

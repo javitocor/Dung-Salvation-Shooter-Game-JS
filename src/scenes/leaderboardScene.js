@@ -10,7 +10,7 @@ export default class LeaderboardScene extends Phaser.Scene {
   create() {
     this.cameras.main.setBackgroundColor('#000111');
     const loading = this.add.bitmapText(250, 250, 'arcade', 'Loading...').setTint(0x08B0F8);
-    this.menuButton = new Button(this, 400, 600, 'blueButton1', 'blueButton2', 'Menu', 'Title');
+    this.menuButton = new Button(this, 400, 550, 'blueButton1', 'blueButton2', 'Menu', 'Title');
     getScore().then((scores) => {
       loading.destroy();
       scores.sort((a, b) => b.score - a.score);

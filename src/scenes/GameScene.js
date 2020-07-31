@@ -101,6 +101,8 @@ export default class GameScene extends Phaser.Scene {
     this.time.addEvent({
       delay: 15000,
       callback: function () {
+        this.scene.pause();
+        this.scene.launch('DialogueBoss');
         const boss = new Boss(this);
         boss.setScale(2.1);
         if (boss != undefined) {

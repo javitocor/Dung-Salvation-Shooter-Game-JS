@@ -1,4 +1,3 @@
-import ScrollingBackground from '../scrolling';
 import Phaser from 'phaser';
 import config from '../config/config';
 import Button from '../Objects/Button';

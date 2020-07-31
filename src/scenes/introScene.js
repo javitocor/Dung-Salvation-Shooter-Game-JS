@@ -33,14 +33,14 @@ export default class IntroScene extends Phaser.Scene {
       duration: 16000,
       delay: 1000,
       onComplete: (() => {
-        this.scene.start('Game');
+        this.scene.start('DialogueIntro');
       }),
     });
   }
 
   update() {
     if (this.keySpace.isDown) {
-      this.scene.start('Game');
+      this.scene.start('DialogueIntro');
     }
   }
 };

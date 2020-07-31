@@ -48,7 +48,7 @@ export default class Boss extends Entity {
         delay: 1000,
         callback: () => {   
           console.log(this.scene);   
-          this.scene.start('EndGame');
+          this.scene.scene.start('DialogueFinal');
         },
         callbackScope: this,
         loop: false
