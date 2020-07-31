@@ -10,6 +10,7 @@ import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
+import EndGameScene from './Scenes/endGameScene';
 import Sound from './model/sound';
 
 class Game extends Phaser.Game {
@@ -27,6 +28,7 @@ class Game extends Phaser.Game {
     this.scene.add('GameOver', GameOverScene);
     this.scene.add('Leaderboard', LeaderboardScene);
     this.scene.add('InputName', InputNameScene);
+    this.scene.add('EndGame', EndGameScene);
     this.scene.start('Boot');
   }
 }

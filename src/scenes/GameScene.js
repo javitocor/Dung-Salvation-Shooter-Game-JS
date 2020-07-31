@@ -4,6 +4,11 @@ import ScrollingBackground from '../scrolling';
 import Destroyer from '../Objects/enemies/destroyer';
 import Fighter from '../Objects/enemies/fighter';
 import CarrierShip from '../Objects/enemies/carrier';
+import Boss from '../Objects/enemies/boss';
+
+let life1;
+let life2;
+let life3;
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -11,9 +16,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    let life1 = this.add.image(750, 50, 'playerShip').setDisplaySize(50, 50);
-    let life2 = this.add.image(700, 50, 'playerShip').setDisplaySize(50, 50);
-    let life3 = this.add.image(650, 50, 'playerShip').setDisplaySize(50, 50);
+    life1 = this.add.image(750, 50, 'playerShip').setDisplaySize(50, 50);
+    life2 = this.add.image(700, 50, 'playerShip').setDisplaySize(50, 50);
+    life3 = this.add.image(650, 50, 'playerShip').setDisplaySize(50, 50);
     let score = 0;
     const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
     
@@ -53,6 +58,7 @@ export default class GameScene extends Phaser.Scene {
 
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
+    this.enemyMissiles = this.add.group();
     this.playerLasers = this.add.group();
 
     this.time.addEvent({
@@ -92,8 +98,23 @@ export default class GameScene extends Phaser.Scene {
       loop: true
     });
 
+    this.time.addEvent({
+      delay: 15000,
+      callback: function () {
+        const boss = new Boss(this);
+        if (boss != undefined) {
+          this.enemies.add(boss);
+        }
+      },
+      callbackScope: this
+    });
+
     this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) {
       if (enemy) {
+        if(enemy.lifes !== undefined){
+          enemy.lifes--;
+          playerLaser.destroy();
+        }
         if (enemy instanceof Destroyer) {
           score += 100;
         } else if (enemy instanceof Fighter) {
@@ -101,14 +122,23 @@ export default class GameScene extends Phaser.Scene {
         } else if (enemy instanceof CarrierShip) {
           score += 125;
         }
-        if (enemy.onDestroy !== undefined) {
+        if(enemy.lifes === 0){
+          enemy.explode(true);
+          playerLaser.destroy();
+          score += 250;
+          window.localStorage.setItem('score', JSON.stringify(score));
+          scoreBoard.text = `Score: ${score}`;
+          this.scene.scene.start('EndGame');
+        } else {
+          if(enemy.onDestroy !== undefined) {
           enemy.onDestroy();
           score += 25;
-        }
-        enemy.explode(true);
-        playerLaser.destroy();
-        window.localStorage.setItem('score', JSON.stringify(score));
-        scoreBoard.text = `Score: ${score}`;
+          }
+          enemy.explode(true);
+          playerLaser.destroy();
+          window.localStorage.setItem('score', JSON.stringify(score));
+          scoreBoard.text = `Score: ${score}`;
+        }        
       }
     });
 
@@ -118,8 +148,8 @@ export default class GameScene extends Phaser.Scene {
         //player.explode(false);
         //player.onDestroy();
         enemy.explode(true);
-        if(player.lives > 0) {
-          player.lives--;
+        if(player.lifes > 0) {
+          player.lifes--;
         } else {
           player.explode(false);
           player.onDestroy();
@@ -129,9 +159,9 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
       if (!player.getData("isDead") && !laser.getData("isDead")) {
-          player.lives--;
+          player.lifes--;
           laser.destroy();          
-          if(player.lives === 0){
+          if(player.lifes === 0){
             player.explode(false);
             player.onDestroy();
           }
@@ -162,11 +192,11 @@ export default class GameScene extends Phaser.Scene {
 
   update() {
 
-    if (this.player.lives === 2) {
+    if (this.player.lifes === 2) {
       life3.destroy();
-    } else if (this.player.lives === 1) {
+    } else if (this.player.lifes === 1) {
       life2.destroy();
-    } else if (this.player.lives === 0) {
+    } else if (this.player.lifes === 0) {
       life1.destroy();
     }
 
