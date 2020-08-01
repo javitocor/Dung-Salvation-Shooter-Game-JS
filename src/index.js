@@ -16,6 +16,7 @@ import Sound from './model/sound';
 import Boss from './Objects/enemies/boss';
 import Boss2 from './Objects/enemies/boss2';
 import Boss3 from './Objects/enemies/boss3';
+import dialogues from './helpers/dialogues';
 
 class Game extends Phaser.Game {
   constructor () {

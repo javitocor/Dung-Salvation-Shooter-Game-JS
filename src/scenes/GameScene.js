@@ -4,7 +4,6 @@ import ScrollingBackground from '../scrolling';
 import Destroyer from '../Objects/enemies/destroyer';
 import Fighter from '../Objects/enemies/fighter';
 import CarrierShip from '../Objects/enemies/carrier';
-import Boss from '../Objects/enemies/boss';
 
 let life1;
 let life2;
@@ -40,12 +39,12 @@ export default class GameScene extends Phaser.Scene {
       laser: this.sound.add("laser", { volume: 0.5 }),
       missile: this.sound.add('missile', { volume: 0.2 })
     };
- 
-    this.backgrounds = [];
+    this.add.image(400, 300, this.key).setDisplaySize(800, 600);
+    /*this.backgrounds = [];
     for (var i = 0; i < 2; i++) {
       var bg = new ScrollingBackground(this, this.key, i * 10);
       this.backgrounds.push(bg);
-    }
+    }*/
 
     this.player = new Player(
       this,
@@ -289,8 +288,8 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.backgrounds.length; i++) {
+    /*for (var i = 0; i < this.backgrounds.length; i++) {
       this.backgrounds[i].update();
-    }
+    }*/
   }
 };
