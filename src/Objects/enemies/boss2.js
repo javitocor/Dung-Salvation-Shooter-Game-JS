@@ -7,7 +7,7 @@ export default class Boss2 extends Entity {
     super(scene, 400, 80, "boss2", "Boss2");
     this.scene = scene;
     this.play("boss2");
-    this.lifes = 15;
+    this.lifes = 20;
     
     this.body.collideWorldBounds = true;
     
@@ -48,16 +48,18 @@ export default class Boss2 extends Entity {
     });
   }
   
-  onDestroy() {
-    console.log(this.scene);
-    const getScene = () => { return this.scene.start('DialogueFinal2');}
+  onDestroy() {    
+    const a = this.scene;
+    function getScene() {
+      return a;
+    }
     this.scene.time.addEvent({ 
         delay: 1000,
         callback: () => {   
-          getScene();
+          getScene().scene.start('DialogueFinal2');
         },
         callbackScope: this,
         loop: false
     });
-}
+  }
 }

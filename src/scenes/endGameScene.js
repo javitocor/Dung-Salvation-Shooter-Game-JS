@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
+import config from '../config/config';
 import ScrollingBackground from '../scrolling';
 
 export default class EndGameScene extends Phaser.Scene {
@@ -11,16 +12,16 @@ export default class EndGameScene extends Phaser.Scene {
     this.background = this.add.image(400, 300, 'starfield').setDisplaySize(800, 600);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     this.skipText = this.add.bitmapText(10, 10,'arcade', 'Press SPACE\nto skip', 8);
-    this.text = this.add.bitmapText(200, 100,'arcade', 'CONGRATULATIONS!!!', 36);
-    this.titleButton = new Button(this, config.width/2, config.height/2 , 'blueButton1', 'blueButton2', 'Menu', 'Title');
+    this.text = this.add.bitmapText(100, 100,'arcade', 'CONGRATULATIONS!!!', 36);
+    this.titleButton = new Button(this, 400, 500 , 'blueButton1', 'blueButton2', 'Score', 'InputName');
     
-    this.image = this.add.image(400, 525, '');
-    this.image2 = this.add.image(200, 525, '');
+    this.image = this.add.image(450, 525, 'tintin');
+    this.image2 = this.add.image(250, 525, 'princess');
 
-    this.tweens.add({
-        targets: image,
-        y: 100,
-        duration: 1000,
+    /*this.tweens.add({
+        targets: this.image,
+        y: 50,
+        duration: 3000,
         ease: 'Power2',
         yoyo: true,
         delay: 500,
@@ -28,14 +29,14 @@ export default class EndGameScene extends Phaser.Scene {
     });
 
     this.tweens.add({
-        targets: image2,
-        y: 100,
-        duration: 1000,
+        targets: this.image2,
+        y: 50,
+        duration: 3000,
         ease: 'Power2',
         yoyo: true,
         delay: 500,
         repeat: 100
-    });
+    });*/
      
   }
 

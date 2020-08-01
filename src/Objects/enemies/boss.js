@@ -48,16 +48,18 @@ export default class Boss extends Entity {
     });
   }
   
-  onDestroy() {
-    console.log(this.scene);
-    const getScene = () => { return this.scene.start('DialogueFinal1');}
+  onDestroy() {    
+    const a = this.scene;
+    function getScene() {
+      return a;
+    }
     this.scene.time.addEvent({ 
         delay: 1000,
         callback: () => {   
-          getScene();
+          getScene().scene.start('DialogueFinal1');
         },
         callbackScope: this,
         loop: false
     });
-}
+  }
 }

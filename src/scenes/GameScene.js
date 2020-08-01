@@ -1,8 +1,11 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Player from '../Objects/Player';
 import Destroyer from '../Objects/enemies/destroyer';
 import Fighter from '../Objects/enemies/fighter';
 import CarrierShip from '../Objects/enemies/carrier';
+import Boss from '../Objects/enemies/boss';
+import Boss2 from '../Objects/enemies/boss2';
+import Boss3 from '../Objects/enemies/boss3';
 
 let life1;
 let life2;
@@ -26,7 +29,7 @@ export default class GameScene extends Phaser.Scene {
     if(this.key === 'space'){
       score = 0;
     } else {
-      score = window.localStorage.getItem('score');
+      score = parseInt(JSON.parse(window.localStorage.getItem('score')));
     }    
     const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
     
@@ -102,11 +105,18 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 15000,
+      delay: 2000,
       callback: function () {
         this.scene.pause();
         this.scene.launch(this.bossText);
-        const boss = this.boss;
+        let boss;
+        if(this.boss === 'boss1') {
+          boss = new Boss(this);
+        }else if (this.boss === 'boss2') {
+          boss = new Boss2(this);
+        } else {
+          boss = new Boss3(this);
+        }        
         boss.setScale(2.1);
         if (boss != undefined) {
           this.enemies.add(boss);

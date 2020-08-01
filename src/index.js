@@ -1,11 +1,11 @@
-import 'phaser';
+import Phaser from 'phaser';
 import config from './Config/config';
-import GameScene from './Scenes/GameScene';
-import InputNameScene from './Scenes/inputNameScene';
-import IntroScene from './Scenes/introScene';
-import LeaderboardScene from './Scenes/leaderboardScene';
-import GameOverScene from './Scenes/GameOverScene';
-import BootScene from './Scenes/BootScene';
+import GameScene from './scenes/GameScene';
+import InputNameScene from './scenes/inputNameScene';
+import IntroScene from './scenes/introScene';
+import LeaderboardScene from './scenes/leaderboardScene';
+import GameOverScene from './scenes/GameOverScene';
+import BootScene from './scenes/BootScene';
 import PreloaderScene from './scenes/PreloaderScene';
 import TitleScene from './scenes/TitleScene';
 import OptionsScene from './scenes/OptionsScene';
@@ -13,9 +13,6 @@ import CreditsScene from './scenes/CreditsScene';
 import EndGameScene from './scenes/endGameScene';
 import DialogueScene from './scenes/dialogueScene';
 import Sound from './model/sound';
-import Boss from './Objects/enemies/boss';
-import Boss2 from './Objects/enemies/boss2';
-import Boss3 from './Objects/enemies/boss3';
 import dialogue from './helpers/dialogues';
 
 class Game extends Phaser.Game {
@@ -34,9 +31,9 @@ class Game extends Phaser.Game {
     this.scene.add('InputName', InputNameScene);
     this.scene.add('EndGame', EndGameScene);
     this.scene.start('Boot');    
-    this.scene.add('Mission1', new GameScene('Mission1', 'space', 'DialogueBoss1', new Boss('Mission1')));
-    this.scene.add('Mission2', new GameScene('Mission2', 'planet', 'DialogueBoss2', new Boss2('Mission2') ));
-    this.scene.add('Mission2', new GameScene('Mission3', 'field', 'DialogueBoss3', new Boss3('Mission3') ));
+    this.scene.add('Mission1', new GameScene('Mission1', 'space', 'DialogueBoss1', 'boss1'));
+    this.scene.add('Mission2', new GameScene('Mission2', 'planet', 'DialogueBoss2', 'boss2' ));
+    this.scene.add('Mission2', new GameScene('Mission3', 'field', 'DialogueBoss3', 'boss3' ));
     this.scene.add('DialogueIntro1', new DialogueScene('DialogueIntro1', dialogue.mission1.intro.title, dialogue.mission1.intro.content, dialogue.mission1.intro.description, 'Mission1'));
     this.scene.add('DialogueBoss1', new DialogueScene('DialogueBoss1', dialogue.mission1.boss.title, dialogue.mission1.boss.content, dialogue.mission1.boss.description, 'Mission1', true));
     this.scene.add('DialogueFinal1', new DialogueScene('DialogueFinal1', dialogue.mission1.end.title, dialogue.mission1.end.content, dialogue.mission1.end.description, 'DialogueIntro2'));

@@ -7,7 +7,7 @@ export default class Boss3 extends Entity {
     super(scene, 400, 80, "boss3", "Boss3");
     this.scene = scene;
     this.play("boss3");
-    this.lifes = 15;
+    this.lifes = 25;
     
     this.body.collideWorldBounds = true;
     
@@ -56,16 +56,18 @@ export default class Boss3 extends Entity {
     });
   }
   
-  onDestroy() {
-    console.log(this.scene);
-    const getScene = () => { return this.scene.start('DialogueFinal3');}
+  onDestroy() {    
+    const a = this.scene;
+    function getScene() {
+      return a;
+    }
     this.scene.time.addEvent({ 
         delay: 1000,
         callback: () => {   
-          getScene();
+          getScene().scene.start('DialogueFinal3');
         },
         callbackScope: this,
         loop: false
     });
-}
+  }
 }

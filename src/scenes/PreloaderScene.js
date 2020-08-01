@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor () {
@@ -81,6 +81,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('blueButton2', 'assets/ui/blue_button03.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
+    this.load.image('tintin', 'assets/commander.png');
+    this.load.image('princess', 'assets/princess.png');
     this.load.image('boss', 'assets/game/boss.PNG');
     this.load.image('boss2', 'assets/game/boss2.png');
     this.load.image('boss3', 'assets/game/boss3.png');

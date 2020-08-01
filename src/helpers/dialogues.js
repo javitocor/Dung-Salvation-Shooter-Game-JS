@@ -13,7 +13,7 @@ const dialogue = {
     end: {
       title: 'MotherShip Destroyed',
       content: 'Captain Tintin destroyed the first Rebel\'s outpost',
-      description: 'C.Tintin has managed to defeat\nthe first rebel defense outpost,\nnow he must continue on his way to Magrathea.',
+      description: 'Cpt.Tintin has managed to defeat\nthe first rebel defense outpost,\nnow he must continue on his way to Magrathea.',
     }
   },
   mission2: {
@@ -25,7 +25,7 @@ const dialogue = {
     boss: {
       title: 'Boss 2',
       content: 'The Star Destroyer awaits Cpt.Tintin',
-      description: 'It is the last stumbling block before reaching the Rebel base.'
+      description: 'It is the last stumbling block\nbefore reaching the Rebel base.'
     },
     end: {
       title: 'Star Destroyer Defeated',
@@ -36,13 +36,13 @@ const dialogue = {
   mission3: {
     intro: {
       title: 'Mission 3',
-      content: 'Rebel\' Base',
+      content: 'Rebel Base',
       description: 'The Rebel base is located in a complicated area,\nCpt.Tintin must use his best skills and\nsave the Princess.'
     },
     boss: {
       title: 'Boss 3',
       content: 'Defeat the Final Boss',
-      description: 'The biggest Star Cruiser awaits you to defend its base'
+      description: 'The biggest Star Cruiser\nawaits you to defend its base'
     },
     end: {
       title: 'Star Cruiser Destroyed',

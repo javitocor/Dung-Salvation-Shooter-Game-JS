@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import Entity from './entities';
+import Entity from './Entities';
 import PlayerLaser from '../helpers/playerLaser';
 
 export default class Player extends Entity {
