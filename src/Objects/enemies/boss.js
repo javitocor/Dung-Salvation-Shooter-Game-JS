@@ -15,20 +15,23 @@ export default class Boss extends Entity {
       delay: 1000,
       callback: function() {
         this.body.velocity.x = Phaser.Math.Between(-200, 200);
-        var missile = new EnemyMissile(
+        let missile = new EnemyMissile(
           this.scene,
           this.x,
-          this.y
+          this.y,
+          'missile'
         );
-        var missile2 = new EnemyMissile(
+        let missile2 = new EnemyMissile(
           this.scene,
           this.x + 25,
-          this.y + 25
+          this.y + 25,
+          'missile'
         );
-        var missile3 = new EnemyMissile(
+        let missile3 = new EnemyMissile(
           this.scene,
           this.x - 25,
-          this.y - 25
+          this.y - 25,
+          'missile'
         );
         missile.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile);
@@ -47,7 +50,7 @@ export default class Boss extends Entity {
   
   onDestroy() {
     console.log(this.scene);
-    const getScene = () => { return this.scene.start('DialogueFinal');}
+    const getScene = () => { return this.scene.start('DialogueFinal1');}
     this.scene.time.addEvent({ 
         delay: 1000,
         callback: () => {   

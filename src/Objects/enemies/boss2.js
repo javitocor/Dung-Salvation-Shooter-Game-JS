@@ -4,9 +4,9 @@ import EnemyMissile from '../../helpers/enemyMissile';
 
 export default class Boss2 extends Entity {
   constructor(scene) {
-    super(scene, 400, 80, "boss", "Boss");
+    super(scene, 400, 80, "boss2", "Boss2");
     this.scene = scene;
-    this.play("boss");
+    this.play("boss2");
     this.lifes = 15;
     
     this.body.collideWorldBounds = true;
@@ -15,20 +15,23 @@ export default class Boss2 extends Entity {
       delay: 1000,
       callback: function() {
         this.body.velocity.x = Phaser.Math.Between(-200, 200);
-        var missile = new EnemyMissile(
+        let missile = new EnemyMissile(
           this.scene,
           this.x,
-          this.y
+          this.y,
+          'missile2'
         );
-        var missile2 = new EnemyMissile(
+        let missile2 = new EnemyMissile(
           this.scene,
           this.x + 25,
-          this.y + 25
+          this.y + 25,
+          'missile2'
         );
-        var missile3 = new EnemyMissile(
+        let missile3 = new EnemyMissile(
           this.scene,
           this.x - 25,
-          this.y - 25
+          this.y - 25,
+          'missile2'
         );
         missile.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile);
@@ -47,7 +50,7 @@ export default class Boss2 extends Entity {
   
   onDestroy() {
     console.log(this.scene);
-    const getScene = () => { return this.scene.start('DialogueFinal');}
+    const getScene = () => { return this.scene.start('DialogueFinal2');}
     this.scene.time.addEvent({ 
         delay: 1000,
         callback: () => {   

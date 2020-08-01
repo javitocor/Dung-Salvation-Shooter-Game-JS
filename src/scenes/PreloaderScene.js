@@ -82,6 +82,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.image('boss', 'assets/game/boss.PNG');
+    this.load.image('boss2', 'assets/game/boss2.png');
+    this.load.image('boss3', 'assets/game/boss3.png');
     this.load.image('carrier', 'assets/game/carrier.png');
     this.load.image('destroyer', 'assets/game/destroyer.png');
     this.load.image('fighter', 'assets/game/fighter.png');
@@ -93,6 +95,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('starfield', 'assets/game/starfield.png');
     this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');
     this.load.image('missile', 'assets/game/missile.png');
+    this.load.image('missile2', 'assets/game/missile2.png');
+    this.load.image('missile3', 'assets/game/missile3.png');
     this.load.image('laserPlayer', 'assets/game/sprLaserPlayer.png');
     this.load.spritesheet('explosion', 'assets/game/explosion.png', {
       frameWidth: 32,

@@ -34,12 +34,18 @@ class Game extends Phaser.Game {
     this.scene.add('InputName', InputNameScene);
     this.scene.add('EndGame', EndGameScene);
     this.scene.start('Boot');    
-    this.scene.add('Mission1', new GameScene('Mission1', 'space', '', '', new Boss('Mission1')));
-    this.scene.add('Mission2', new GameScene('Mission2', 'planet', '', '', new Boss2('Mission2') ));
-    this.scene.add('Mission2', new GameScene('Mission3', 'field', '', '', new Boss3('Mission3') ));
-    this.scene.add('DialogueIntro', new DialogueScene('DialogueIntro', 'Mission 1', 'Space Battle', 'Captain Tintin is heading to Magrathea,\nwhere the Rebels base is.\nBut it is well protected, the fight begins...', 'Mission1'));
-    this.scene.add('DialogueBoss', new DialogueScene('DialogueBoss', 'Final Boss', 'Defeat the Rebels Boss', 'Defeat the boss to save the Princess Dung!', 'Game', true));
-    this.scene.add('DialogueFinal', new DialogueScene('DialogueFinal', 'Rescue', 'You saved the Galaxy!', 'Success! You have rescued\nthe Princess Dung and\nsaved the Galaxy\nCongratulations!!!', 'EndGame'));    
+    this.scene.add('Mission1', new GameScene('Mission1', 'space', 'DialogueBoss1', new Boss('Mission1')));
+    this.scene.add('Mission2', new GameScene('Mission2', 'planet', 'DialogueBoss2', new Boss2('Mission2') ));
+    this.scene.add('Mission2', new GameScene('Mission3', 'field', 'DialogueBoss3', new Boss3('Mission3') ));
+    this.scene.add('DialogueIntro1', new DialogueScene('DialogueIntro1', dialogue.mission1.intro.title, dialogue.mission1.intro.content, dialogue.mission1.intro.description, 'Mission1'));
+    this.scene.add('DialogueBoss1', new DialogueScene('DialogueBoss1', dialogue.mission1.boss.title, dialogue.mission1.boss.content, dialogue.mission1.boss.description, 'Mission1', true));
+    this.scene.add('DialogueFinal1', new DialogueScene('DialogueFinal1', dialogue.mission1.end.title, dialogue.mission1.end.content, dialogue.mission1.end.description, 'DialogueIntro2'));
+    this.scene.add('DialogueIntro2', new DialogueScene('DialogueIntro2', dialogue.mission2.intro.title, dialogue.mission2.intro.content, dialogue.mission2.intro.description, 'Mission2'));
+    this.scene.add('DialogueBoss2', new DialogueScene('DialogueBoss2', dialogue.mission2.boss.title, dialogue.mission2.boss.content, dialogue.mission2.boss.description, 'Mission2', true));
+    this.scene.add('DialogueFinal2', new DialogueScene('DialogueFinal2', dialogue.mission2.end.title, dialogue.mission2.end.content, dialogue.mission2.end.description, 'DialogueIntro3')); 
+    this.scene.add('DialogueIntro3', new DialogueScene('DialogueIntro3', dialogue.mission3.intro.title, dialogue.mission3.intro.content, dialogue.mission3.intro.description, 'Mission3'));
+    this.scene.add('DialogueBoss3', new DialogueScene('DialogueBoss3', dialogue.mission3.boss.title, dialogue.mission3.boss.content, dialogue.mission3.boss.description, 'Mission3', true));
+    this.scene.add('DialogueFinal3', new DialogueScene('DialogueFinal3', dialogue.mission3.end.title, dialogue.mission3.end.content, dialogue.mission3.end.description, 'EndGame'));   
   }
 }
 

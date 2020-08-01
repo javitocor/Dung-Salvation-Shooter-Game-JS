@@ -1,6 +1,5 @@
 import 'phaser';
 import Player from '../Objects/Player';
-import ScrollingBackground from '../scrolling';
 import Destroyer from '../Objects/enemies/destroyer';
 import Fighter from '../Objects/enemies/fighter';
 import CarrierShip from '../Objects/enemies/carrier';
@@ -8,6 +7,7 @@ import CarrierShip from '../Objects/enemies/carrier';
 let life1;
 let life2;
 let life3;
+let score = 0;
 
 export default class GameScene extends Phaser.Scene {
   constructor(scene, key, bossText, boss) {
@@ -17,11 +17,17 @@ export default class GameScene extends Phaser.Scene {
     this.boss = boss;
   }
 
-  create() {
+  create() {    
+    this.add.image(400, 300, this.key).setDisplaySize(800, 600);
     life1 = this.add.image(750, 50, 'playerShip').setDisplaySize(50, 50);
     life2 = this.add.image(700, 50, 'playerShip').setDisplaySize(50, 50);
     life3 = this.add.image(650, 50, 'playerShip').setDisplaySize(50, 50);
-    let score = 0;
+
+    if(this.key === 'space'){
+      score = 0;
+    } else {
+      score = window.localStorage.getItem('score');
+    }    
     const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
     
     this.anims.create({
@@ -37,14 +43,8 @@ export default class GameScene extends Phaser.Scene {
         this.sound.add("explosion2", { volume: 0.7 })
       ],
       laser: this.sound.add("laser", { volume: 0.5 }),
-      missile: this.sound.add('missile', { volume: 0.2 })
+      missile: this.sound.add('missile', { volume: 0.3 })
     };
-    this.add.image(400, 300, this.key).setDisplaySize(800, 600);
-    /*this.backgrounds = [];
-    for (var i = 0; i < 2; i++) {
-      var bg = new ScrollingBackground(this, this.key, i * 10);
-      this.backgrounds.push(bg);
-    }*/
 
     this.player = new Player(
       this,
@@ -193,7 +193,7 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.collider(this.enemyMissiles, this.playerLasers, (enemyMissile, playerLaser) => {
       if (playerLaser) {
-        score += 5;
+        score += 10;
         playerLaser.explode(false);
         enemyMissile.destroy();
         window.localStorage.setItem('score', JSON.stringify(score));
@@ -287,9 +287,5 @@ export default class GameScene extends Phaser.Scene {
         }
       }
     }
-
-    /*for (var i = 0; i < this.backgrounds.length; i++) {
-      this.backgrounds[i].update();
-    }*/
   }
 };
