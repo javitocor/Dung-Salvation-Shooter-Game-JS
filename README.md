@@ -32,6 +32,8 @@ Actual Weather:
 5-Day Forecast:
 ![screenshot](./assets/screenshot3.png)
 
+Kindly check my Game Design Document [GDD](assets/docs/gamedesigndocument.md)
+
 
 Additional description about the project and its features.
 
