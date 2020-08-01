@@ -52,6 +52,37 @@ Additional description about the project and its features.
 [Live Demo Link]() :point_left:
 [Video Presentation]() :point_left:
 
+## Instructions to Play
+
+- Click the option you want in the Landing Scene.
+
+- Press 'Play' to start playing.
+
+- Press 'Options' to enable/disable sound features.
+
+- Press 'Credits' to see who made it possible.
+
+- Press 'Leaders' to see the 5 best scores.
+
+- To play you need the Keyboard and the Mouse.
+
+- CONTROLS:
+
+  - Press 'A' to move LEFT.
+
+  - Press 'D' to move RIGHT.
+
+  - Press 'W' to move UP.
+
+  - Press 'S' to move DOWN.
+
+  - Press 'SpaceBar' to SHOOT.
+
+- Use the mouse for the non-game and dialogues screens.
+
+- ENJOY!
+
+
 ## Getting Started
 
 ### Usage
@@ -100,6 +131,7 @@ Give a ⭐️ if you like this project!
 - StackOverFlow
 - Jared York
 - Microverse
+- https://opengameart.org/
 
 ## 📝 License
 
