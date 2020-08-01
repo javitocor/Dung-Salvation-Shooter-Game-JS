@@ -7,10 +7,10 @@ export default class CarrierShip extends Entity {
     this.play("carrier");
 
     this.body.velocity.y = Phaser.Math.Between(50, 250);
-    
+
     this.shootTimer = this.scene.time.addEvent({
       delay: 1500,
-      callback: function() {
+      callback: function () {
         var laser = new EnemyLaser(
           this.scene,
           this.x,

@@ -21,10 +21,10 @@ export default class Entity extends Phaser.GameObjects.Sprite {
 
   explode(canDestroy) {
     if (!this.getData("isDead")) {
-      
-      this.setTexture("explosion");  
-      this.play("explosion"); 
-      
+
+      this.setTexture("explosion");
+      this.play("explosion");
+
       this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
       if (this.shootTimer !== undefined) {
         if (this.shootTimer) {
@@ -33,11 +33,10 @@ export default class Entity extends Phaser.GameObjects.Sprite {
       }
       this.setAngle(0);
       this.body.setVelocity(0, 0);
-      this.on('animationcomplete', function() {
+      this.on('animationcomplete', function () {
         if (canDestroy) {
           this.destroy();
-        }
-        else {
+        } else {
           this.setVisible(false);
         }
       }, this);

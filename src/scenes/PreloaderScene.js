@@ -1,15 +1,15 @@
 import Phaser from 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Preloader');
   }
 
-  init () {
+  init() {
     this.readyCount = 0;
   }
 
-  preload () {
+  preload() {
     this.add.image(400, 200, 'logo');
 
     var progressBar = this.add.graphics();
@@ -111,10 +111,10 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('missile', 'assets/game/missile.ogg');
 
     this.load.html('nameform', 'assets/text/nameform.html');
-    
+
   }
 
-  ready () {
+  ready() {
     this.scene.start('Title');
     this.readyCount++;
     if (this.readyCount === 2) {

@@ -29,7 +29,7 @@ export default class Player extends Entity {
   onDestroy() {
     this.scene.time.addEvent({
       delay: 1000,
-      callback: function() {
+      callback: function () {
         this.scene.scene.start("InputName");
       },
       callbackScope: this,
@@ -44,13 +44,12 @@ export default class Player extends Entity {
 
     if (this.getData("isShooting")) {
       if (this.getData("timerShootTick") < this.getData("timerShootDelay")) {
-        this.setData("timerShootTick", this.getData("timerShootTick") + 1); 
-      }
-      else { 
+        this.setData("timerShootTick", this.getData("timerShootTick") + 1);
+      } else {
         var laser = new PlayerLaser(this.scene, this.x, this.y);
         this.scene.playerLasers.add(laser);
-      
-        this.scene.sfx.laser.play(); 
+
+        this.scene.sfx.laser.play();
         this.setData("timerShootTick", 0);
       }
     }

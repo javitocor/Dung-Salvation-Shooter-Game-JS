@@ -16,11 +16,11 @@ export default class Fighter extends Entity {
   update() {
     if (!this.getData("isDead") && this.scene.player) {
       if (Phaser.Math.Distance.Between(
-        this.x,
-        this.y,
-        this.scene.player.x,
-        this.scene.player.y
-      ) < 320) {
+          this.x,
+          this.y,
+          this.scene.player.x,
+          this.scene.player.y
+        ) < 320) {
 
         this.state = this.states.CHASE;
       }
@@ -39,10 +39,9 @@ export default class Fighter extends Entity {
 
         if (this.x < this.scene.player.x) {
           this.angle -= 5;
-        }
-        else {
+        } else {
           this.angle += 5;
-        } 
+        }
       }
     }
   }

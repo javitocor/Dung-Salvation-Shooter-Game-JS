@@ -20,19 +20,19 @@ export default class GameScene extends Phaser.Scene {
     this.boss = boss;
   }
 
-  create() {    
+  create() {
     this.add.image(400, 300, this.key).setDisplaySize(800, 600);
     life1 = this.add.image(750, 50, 'playerShip').setDisplaySize(50, 50);
     life2 = this.add.image(700, 50, 'playerShip').setDisplaySize(50, 50);
     life3 = this.add.image(650, 50, 'playerShip').setDisplaySize(50, 50);
 
-    if(this.key === 'space'){
+    if (this.key === 'space') {
       score = 0;
     } else {
       score = parseInt(JSON.parse(window.localStorage.getItem('score')));
-    }    
+    }
     const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
-    
+
     this.anims.create({
       key: "explosion",
       frames: this.anims.generateFrameNumbers("explosion"),
@@ -42,11 +42,19 @@ export default class GameScene extends Phaser.Scene {
 
     this.sfx = {
       explosions: [
-        this.sound.add("explosion1", { volume: 0.7 }),
-        this.sound.add("explosion2", { volume: 0.7 })
+        this.sound.add("explosion1", {
+          volume: 0.7
+        }),
+        this.sound.add("explosion2", {
+          volume: 0.7
+        })
       ],
-      laser: this.sound.add("laser", { volume: 0.5 }),
-      missile: this.sound.add('missile', { volume: 0.3 })
+      laser: this.sound.add("laser", {
+        volume: 0.5
+      }),
+      missile: this.sound.add('missile', {
+        volume: 0.3
+      })
     };
 
     this.player = new Player(
@@ -110,13 +118,13 @@ export default class GameScene extends Phaser.Scene {
         this.scene.pause();
         this.scene.launch(this.bossText);
         let boss;
-        if(this.boss === 'boss1') {
+        if (this.boss === 'boss1') {
           boss = new Boss(this);
-        }else if (this.boss === 'boss2') {
+        } else if (this.boss === 'boss2') {
           boss = new Boss2(this);
         } else {
           boss = new Boss3(this);
-        }        
+        }
         boss.setScale(2.1);
         if (boss != undefined) {
           this.enemies.add(boss);
@@ -127,10 +135,10 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) {
       if (enemy) {
-        if(enemy.lifes !== undefined){
+        if (enemy.lifes !== undefined) {
           enemy.lifes--;
           playerLaser.destroy();
-          if(enemy.lifes === 0 && !enemy.getData('isDead')){
+          if (enemy.lifes === 0 && !enemy.getData('isDead')) {
             enemy.explode(true);
             playerLaser.destroy();
             enemy.onDestroy();
@@ -139,28 +147,28 @@ export default class GameScene extends Phaser.Scene {
             scoreBoard.text = `Score: ${score}`;
           }
         }
-        
-        if(enemy.onDestroy !== undefined && enemy.lifes === undefined) {
-            enemy.onDestroy();
-            if (enemy instanceof Destroyer) {
-              score += 125;
-            } else if (enemy instanceof Fighter) {
-              score += 75;
-            } else if (enemy instanceof CarrierShip) {
-              score += 100;
-            }
-            enemy.explode(true);
-            playerLaser.destroy();
-            window.localStorage.setItem('score', JSON.stringify(score));
-            scoreBoard.text = `Score: ${score}`;
-          }                
+
+        if (enemy.onDestroy !== undefined && enemy.lifes === undefined) {
+          enemy.onDestroy();
+          if (enemy instanceof Destroyer) {
+            score += 125;
+          } else if (enemy instanceof Fighter) {
+            score += 75;
+          } else if (enemy instanceof CarrierShip) {
+            score += 100;
+          }
+          enemy.explode(true);
+          playerLaser.destroy();
+          window.localStorage.setItem('score', JSON.stringify(score));
+          scoreBoard.text = `Score: ${score}`;
+        }
       }
     });
 
     this.physics.add.overlap(this.player, this.enemies, function (player, enemy) {
       if (!player.getData("isDead") && !enemy.getData("isDead")) {
         enemy.explode(true);
-        if(player.lifes > 0) {
+        if (player.lifes > 0) {
           player.lifes--;
         } else {
           player.explode(false);
@@ -171,23 +179,23 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
       if (!player.getData("isDead") && !laser.getData("isDead")) {
-          player.lifes--;
-          laser.destroy();          
-          if(player.lifes === 0){
-            player.explode(false);
-            player.onDestroy();
-          }
+        player.lifes--;
+        laser.destroy();
+        if (player.lifes === 0) {
+          player.explode(false);
+          player.onDestroy();
+        }
       }
     });
 
     this.physics.add.overlap(this.player, this.enemyMissiles, function (player, missile) {
       if (!player.getData("isDead") && !missile.getData("isDead")) {
-          player.lifes--;
-          missile.destroy();          
-          if(player.lifes === 0){
-            player.explode(false);
-            player.onDestroy();
-          }
+        player.lifes--;
+        missile.destroy();
+        if (player.lifes === 0) {
+          player.explode(false);
+          player.onDestroy();
+        }
       }
     });
 

@@ -10,7 +10,7 @@ export default class Destroyer extends Entity {
 
     this.shootTimer = this.scene.time.addEvent({
       delay: 1200,
-      callback: function() {
+      callback: function () {
         var laser = new EnemyLaser(
           this.scene,
           this.x - 2,

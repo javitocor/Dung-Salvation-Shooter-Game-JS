@@ -19,8 +19,8 @@ export default class DialogueScene extends Phaser.Scene {
         width: 500,
         background: this.rexUI.add.roundRectangle(0, 0, 100, 100, 20, 0x08B0F8),
         title: createLabel(this, this.title).setDraggable(),
-        content: createLabel(this, this.content), 
-        description: createLabel(this, this.description),       
+        content: createLabel(this, this.content),
+        description: createLabel(this, this.description),
         actions: [createLabel(this, 'Go!')],
         space: {
           left: 20,
@@ -42,41 +42,41 @@ export default class DialogueScene extends Phaser.Scene {
 
         align: {
           title: 'center',
-          actions: 'right', 
+          actions: 'right',
         },
 
         click: {
           mode: 'release'
         }
       })
-      .setDraggable('background') 
-      .layout()      
+      .setDraggable('background')
+      .layout()
       .popUp(1000);
 
     const tween = this.tweens.add({
       targets: dialog,
       scaleX: 1,
       scaleY: 1,
-      ease: 'Bounce', 
+      ease: 'Bounce',
       duration: 1000,
-      repeat: 0, 
+      repeat: 0,
       yoyo: false
     });
 
     this.print = this.add.text(0, 0, '');
     dialog
       .on('button.click', () => {
-        if(this.boss === true){
+        if (this.boss === true) {
           this.scene.stop();
           this.scene.resume(this.nextScene);
         } else {
           this.scene.start(this.nextScene);
-        }        
+        }
       })
-      .on('button.over', ()=> {
+      .on('button.over', () => {
         button.getElement('background').setStrokeStyle(1, 0xffffff);
       })
-      .on('button.out', ()=> {
+      .on('button.out', () => {
         button.getElement('background').setStrokeStyle();
       });
   }

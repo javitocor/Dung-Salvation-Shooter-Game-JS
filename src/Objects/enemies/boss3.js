@@ -8,12 +8,12 @@ export default class Boss3 extends Entity {
     this.scene = scene;
     this.play("boss3");
     this.lifes = 25;
-    
+
     this.body.collideWorldBounds = true;
-    
+
     this.shootTimer = this.scene.time.addEvent({
       delay: 1000,
-      callback: function() {
+      callback: function () {
         this.body.velocity.x = Phaser.Math.Between(-200, 200);
         let missile = new EnemyMissile(
           this.scene,
@@ -41,7 +41,7 @@ export default class Boss3 extends Entity {
         );
         missile.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile);
-        this.scene.sfx.missile.play(); 
+        this.scene.sfx.missile.play();
         missile2.setScale(this.scaleX);
         this.scene.enemyMissiles.add(missile2);
         this.scene.sfx.missile.play();
@@ -55,19 +55,20 @@ export default class Boss3 extends Entity {
       loop: true
     });
   }
-  
-  onDestroy() {    
+
+  onDestroy() {
     const a = this.scene;
+
     function getScene() {
       return a;
     }
-    this.scene.time.addEvent({ 
-        delay: 1000,
-        callback: () => {   
-          getScene().scene.start('DialogueFinal3');
-        },
-        callbackScope: this,
-        loop: false
+    this.scene.time.addEvent({
+      delay: 1000,
+      callback: () => {
+        getScene().scene.start('DialogueFinal3');
+      },
+      callbackScope: this,
+      loop: false
     });
   }
 }

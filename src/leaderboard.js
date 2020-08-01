@@ -36,5 +36,3 @@ export const getScore = async () => {
     console.error('Error:', error);
   }
 }
-
-

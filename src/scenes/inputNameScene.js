@@ -1,13 +1,15 @@
 import Phaser from 'phaser';
-import { setScore } from '../leaderboard';
+import {
+  setScore
+} from '../leaderboard';
 
 export default class InputNameScene extends Phaser.Scene {
   constructor() {
     super('InputName');
   }
 
-  create() { 
-    this.add.image(400, 300, 'bg2');   
+  create() {
+    this.add.image(400, 300, 'bg2');
     let score = window.localStorage.getItem('score');
     let text = this.add.bitmapText(300, 10, 'arcade', 'Please enter your name', 18).setTint(0x08B0F8);
 
@@ -27,7 +29,7 @@ export default class InputNameScene extends Phaser.Scene {
           }).catch((e) => {
             console.log('Error:', e);
           });
-          
+
         } else {
           this.scene.tweens.add({
             targets: text,
