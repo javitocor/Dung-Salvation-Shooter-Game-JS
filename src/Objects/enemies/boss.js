@@ -47,11 +47,11 @@ export default class Boss extends Entity {
   
   onDestroy() {
     console.log(this.scene);
+    const getScene = () => { return this.scene.start('DialogueFinal');}
     this.scene.time.addEvent({ 
         delay: 1000,
         callback: () => {   
-          console.log(this.scene);   
-          this.scene.scene.start('DialogueFinal');
+          getScene();
         },
         callbackScope: this,
         loop: false
