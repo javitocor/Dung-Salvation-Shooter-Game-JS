@@ -11,7 +11,7 @@ export default class GameOverScene extends Phaser.Scene {
   }
   create() {
     this.cameras.main.setBackgroundColor('#000111');
-    this.add.image(400, 300, 'bg2');   
+    this.add.image(400, 300, 'bg2').setDisplaySize(800, 600);   
     this.title = this.add.bitmapText(this.game.config.width * 0.5, 128,'arcade', "GAME OVER", 48);
     this.title.setOrigin(0.5);    
 

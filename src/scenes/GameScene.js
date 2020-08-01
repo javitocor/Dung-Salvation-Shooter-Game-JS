@@ -11,8 +11,11 @@ let life2;
 let life3;
 
 export default class GameScene extends Phaser.Scene {
-  constructor() {
-    super('Game');
+  constructor(scene, key, bossText, boss) {
+    super(scene);
+    this.key = key;
+    this.bossText = bossText;
+    this.boss = boss;
   }
 
   create() {
@@ -40,7 +43,7 @@ export default class GameScene extends Phaser.Scene {
  
     this.backgrounds = [];
     for (var i = 0; i < 2; i++) {
-      var bg = new ScrollingBackground(this, "bg1", i * 10);
+      var bg = new ScrollingBackground(this, this.key, i * 10);
       this.backgrounds.push(bg);
     }
 
@@ -103,8 +106,8 @@ export default class GameScene extends Phaser.Scene {
       delay: 15000,
       callback: function () {
         this.scene.pause();
-        this.scene.launch('DialogueBoss');
-        const boss = new Boss(this);
+        this.scene.launch(this.bossText);
+        const boss = this.boss;
         boss.setScale(2.1);
         if (boss != undefined) {
           this.enemies.add(boss);
