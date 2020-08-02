@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import Button from '../objects/Button';
 import {
   getScore
-} from '../leaderboard';
+} from '../helpers/leaderboard';
 
 export default class LeaderboardScene extends Phaser.Scene {
   constructor() {

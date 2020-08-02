@@ -6,13 +6,11 @@ const getEnemies = (scene, key) =>{
   let enemy;
   const number = Phaser.Math.Between(0, 10)
   if(key === 'space'){
-    if(number){
       enemy = new Destroyer(
         scene,
         Phaser.Math.Between(0, scene.game.config.width),
         0
-      ); 
-    }   
+      );       
   } else if(key === 'planet') {
     if(number >= 4){
       enemy = new Destroyer(

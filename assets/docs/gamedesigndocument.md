@@ -8,7 +8,9 @@ In a galaxy far, far away, a civil war is brewing. The Rebels have infiltrated t
 The Rebels, after their first battle won, have managed to kidnap Princess Dung, who guarded important information to end the rebels and thus also the war.
 The Galactic Democratic Government, seeing that its supremacy is in jeopardy, decide to send its best pilot, Captain Tintin, on a rescue mission ...
 
-# Controls 
+# GamePlay
+
+## Controls 
 
 - Press 'A' to move LEFT.
 
@@ -20,18 +22,19 @@ The Galactic Democratic Government, seeing that its supremacy is in jeopardy, de
 
 - Press 'SpaceBar' to SHOOT.
 
-# GameFlow
+## GameFlow
 
 - The player has 3 lifes
 - 3 different scenes
-- 3 different bosses
+- Each scene has different enemies
+- One different final boss for each scene
 - Intro scene
 - Dialogues between scenes ( Intro, boss scene and end scene)
 - End game scene
 - When the user loses all 3 lifes is redirected to the input name scene and then to the Game Over scene
 - In the leaderboard scene the 5 best scores are displayed
 
-# Score
+## Score
 
 - Each enemy destroyed has a different value:
   - Fighter 75 points

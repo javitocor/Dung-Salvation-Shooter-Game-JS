@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import createLabel from '../createLabel';
+import createLabel from '../helpers/createLabel';
 
 export default class DialogueScene extends Phaser.Scene {
   constructor(scene, title, content, description, nextScene, boss = false) {

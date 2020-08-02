@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
-import ScrollingBackground from '../scrolling';
+import ScrollingBackground from '../helpers/scrolling';
 
 export default class EndGameScene extends Phaser.Scene {
   constructor() {

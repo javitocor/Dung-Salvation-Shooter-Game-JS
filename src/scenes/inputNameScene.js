@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import {
   setScore
-} from '../leaderboard';
+} from '../helpers/leaderboard';
 
 export default class InputNameScene extends Phaser.Scene {
   constructor() {
