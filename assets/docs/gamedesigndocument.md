@@ -87,5 +87,5 @@ Project tested using [Jest](https://jestjs.io/en/)
 - Jared York for the tutorials
 - Micorverse for the API
 - Stackoverflow for the help
-- [Opengameart.org](https://opengameart.org/) for the assets:
+- Opengameart.org for the assets:
   - 

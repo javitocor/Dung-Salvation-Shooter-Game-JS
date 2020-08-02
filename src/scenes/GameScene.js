@@ -3,9 +3,8 @@ import Player from '../Objects/Player';
 import Destroyer from '../Objects/enemies/destroyer';
 import Fighter from '../Objects/enemies/fighter';
 import CarrierShip from '../Objects/enemies/carrier';
-import Boss from '../Objects/enemies/boss';
-import Boss2 from '../Objects/enemies/boss2';
-import Boss3 from '../Objects/enemies/boss3';
+import getEnemies from '../helpers/getEnemies';
+import getBosses from '../helpers/getBosses';
 
 let life1;
 let life2;
@@ -64,7 +63,6 @@ export default class GameScene extends Phaser.Scene {
       "playerShip"
     );
 
-    console.log(this.player);
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -79,31 +77,7 @@ export default class GameScene extends Phaser.Scene {
     this.time.addEvent({
       delay: 1000,
       callback: function () {
-        let enemy = null;
-
-        if (Phaser.Math.Between(0, 10) >= 3) {
-          enemy = new Destroyer(
-            this,
-            Phaser.Math.Between(0, this.game.config.width),
-            0
-          );
-        } else if (Phaser.Math.Between(0, 10) >= 5) {
-          if (this.getEnemiesByType("fighter").length < 5) {
-
-            enemy = new Fighter(
-              this,
-              Phaser.Math.Between(0, this.game.config.width),
-              0
-            );
-          }
-        } else {
-          enemy = new CarrierShip(
-            this,
-            Phaser.Math.Between(0, this.game.config.width),
-            0
-          );
-        }
-
+        let enemy = getEnemies(this);
         if (enemy !== null) {
           enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
           this.enemies.add(enemy);
@@ -118,14 +92,7 @@ export default class GameScene extends Phaser.Scene {
       callback: function () {
         this.scene.pause();
         this.scene.launch(this.bossText);
-        let boss;
-        if (this.boss === 'boss1') {
-          boss = new Boss(this);
-        } else if (this.boss === 'boss2') {
-          boss = new Boss2(this);
-        } else {
-          boss = new Boss3(this);
-        }
+        let boss = getBosses(this, this.boss);        
         boss.setScale(2.1);
         if (boss != undefined) {
           this.enemies.add(boss);
