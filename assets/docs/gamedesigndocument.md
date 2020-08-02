@@ -1,12 +1,16 @@
 # Introduction
 
-
+This is a 5 day project for Microverse, in this time I have had to learn how to use the Phaser 3 framework, create the story, find the different assets, test the game and meet all the given requirements.
 
 # Story
 
+In a galaxy far, far away, a civil war is brewing. The Rebels have infiltrated the highest spheres of the Galactic Democratic Government to take power and thus be able to dominate the galaxy under their orders.
+The Rebels, after their first battle won, have managed to kidnap Princess Dung, who guarded important information to end the rebels and thus also the war.
+The Galactic Democratic Government, seeing that its supremacy is in jeopardy, decide to send its best pilot, Captain Tintin, on a rescue mission ...
+
 # Targets
 
-- Create effective JavaScript code, that solves the problem
+- Create effective JavaScript code
 - Use Webpack
 - Use ES6+
 - Encapsulate JS code in classes
@@ -23,7 +27,7 @@
 - Strong English written communication
 - Deploy apps
 - Use linters
-- Maintain professional Github repos
+- Maintain a professional Github repo
 
 # Planification
 
@@ -38,7 +42,7 @@ This project was developed in this schedule:
 - Phase 7: Select and add all the assets to the game.
 - Phase 8: Deployment.
 
-# Making Of
+# Technology Used
 
 This project was built using [Phaser 3](https://phaser.io/phaser3), [Webpack](https://webpack.js.org/), [Bootstrap](https://getbootstrap.com/) and Javascript.
 Project tested using [Jest](https://jestjs.io/en/)
