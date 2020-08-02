@@ -87,8 +87,16 @@ Project tested using [Jest](https://jestjs.io/en/)
 # Acknowledgements
 
 - Phaser 3 for the framework, the docs and the examples
-- Jared York for the tutorials
+- Jared York for the tutorials and some assets
 - Micorverse for the API
 - Stackoverflow for the help
 - Opengameart.org for the assets:
-  - 
+  - Backgrounds: [Rawdanitsu](https://opengameart.org/users/rawdanitsu)
+  - Ships: [Carlos Alface](http://carlosalface.blogspot.pt/)
+  - Princess and Captain: [Justin Nichol](https://opengameart.org/users/justin-nichol)
+  - Player Ship: [MillionthVector](http://millionthvector.blogspot.de)
+  - Lasers and missiles: [Carlos Alface](http://carlosalface.blogspot.pt/)
+  - Boss stage 1: [Skorpio](http://opengameart.org/users/skorpio)
+  - Background stage 3: [p0ss](https://opengameart.org/users/p0ss)
+  - BackGround Audio: Daft Punk
+  - Weapons Sound Effects: [Calinou](https://opengameart.org/users/calinou)
