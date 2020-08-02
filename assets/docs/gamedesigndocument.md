@@ -8,6 +8,40 @@ In a galaxy far, far away, a civil war is brewing. The Rebels have infiltrated t
 The Rebels, after their first battle won, have managed to kidnap Princess Dung, who guarded important information to end the rebels and thus also the war.
 The Galactic Democratic Government, seeing that its supremacy is in jeopardy, decide to send its best pilot, Captain Tintin, on a rescue mission ...
 
+# Controls 
+
+- Press 'A' to move LEFT.
+
+- Press 'D' to move RIGHT.
+
+- Press 'W' to move UP.
+
+- Press 'S' to move DOWN.
+
+- Press 'SpaceBar' to SHOOT.
+
+# GameFlow
+
+- The player has 3 lifes
+- 3 different scenes
+- 3 different bosses
+- Intro scene
+- Dialogues between scenes ( Intro, boss scene and end scene)
+- End game scene
+- When the user loses all 3 lifes is redirected to the input name scene and then to the Game Over scene
+- In the leaderboard scene the 5 best scores are displayed
+
+# Score
+
+- Each enemy destroyed has a different value:
+  - Fighter 75 points
+  - Carrier 100 points
+  - Destroyer 125 points
+  - Boss 250 points
+- Each laser/missile destroyed has a different value:
+  - Normal enemy laser 5 points
+  - Bosses missiles 10 points
+
 # Targets
 
 - Create effective JavaScript code
@@ -52,5 +86,6 @@ Project tested using [Jest](https://jestjs.io/en/)
 - Phaser 3 for the framework, the docs and the examples
 - Jared York for the tutorials
 - Micorverse for the API
+- Stackoverflow for the help
 - [Opengameart.org](https://opengameart.org/) for the assets:
   - 

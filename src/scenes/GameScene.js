@@ -64,6 +64,7 @@ export default class GameScene extends Phaser.Scene {
       "playerShip"
     );
 
+    console.log(this.player);
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);

@@ -21,11 +21,9 @@ export default class InputNameScene extends Phaser.Scene {
 
       if (event.target.name === 'submitButton') {
         let inputText = this.getChildByName('nameField');        
-        const loading = this.add.bitmapText(250, 250, 'arcade', 'Loading...').setTint(0x08B0F8);
 
         if (inputText.value !== '') {
           setScore(inputText.value, score).then(() => {
-            loading.destroy();
             element.scene.scene.start('GameOver');
           }).catch((e) => {
             console.log('Error:', e);
