@@ -10,43 +10,23 @@ export default class EndGameScene extends Phaser.Scene {
   }
 
   create() {
-    //this.background = this.add.image(400, 300, 'starfield').setDisplaySize(800, 600);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     this.skipText = this.add.bitmapText(10, 10, 'arcade', 'Press SPACE\nto skip', 8);
     this.text = this.add.bitmapText(100, 100, 'arcade', 'CONGRATULATIONS!!!', 36);
     let score = window.localStorage.getItem('score');
-    this.score = this.add.bitmapText(100, 150, 'arcade', `SCORE: ${score}`, 28);
+    this.score = this.add.bitmapText(225, 150, 'arcade', `SCORE: ${score}`, 28);
     this.titleButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Score', 'InputName');
 
-    this.image = this.add.image(450, 525, 'tintin');
-    this.image2 = this.add.image(250, 525, 'princess');
+    this.image = this.add.image(550, 300, 'tintin');
+    this.text2 = this.add.bitmapText(490, 220, 'arcade', 'Captain Tintin', 9);
+    this.image2 = this.add.image(275, 300, 'princess');
+    this.text3 = this.add.bitmapText(215, 220, 'arcade', 'Princess Dung', 9);
 
     this.backgrounds = [];
     for (var i = 0; i < 5; i++) {
       var bg = new ScrollingBackground(this, 'starfield', i * 10);
       this.backgrounds.push(bg);
     }
-
-    /*this.tweens.add({
-        targets: this.image,
-        y: 50,
-        duration: 3000,
-        ease: 'Power2',
-        yoyo: true,
-        delay: 500,
-        repeat: 100
-    });
-
-    this.tweens.add({
-        targets: this.image2,
-        y: 50,
-        duration: 3000,
-        ease: 'Power2',
-        yoyo: true,
-        delay: 500,
-        repeat: 100
-    });*/
-
   }
 
   update() {
