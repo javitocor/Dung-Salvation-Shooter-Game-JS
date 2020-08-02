@@ -133,7 +133,6 @@ Give a ⭐️ if you like this project!
 
 - Phaser 3 docs
 - StackOverFlow
-- Jared York
 - Microverse
 - https://opengameart.org/
 

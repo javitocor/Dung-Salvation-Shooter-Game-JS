@@ -48,3 +48,9 @@ This project was built using [Phaser 3](https://phaser.io/phaser3), [Webpack](ht
 Project tested using [Jest](https://jestjs.io/en/)
 
 # Acknowledgements
+
+- Phaser 3 for the framework, the docs and the examples
+- Jared York for the tutorials
+- Micorverse for the API
+- [Opengameart.org](https://opengameart.org/) for the assets:
+  - 
