@@ -77,7 +77,7 @@ export default class GameScene extends Phaser.Scene {
     this.time.addEvent({
       delay: 1000,
       callback: function () {
-        let enemy = getEnemies(this);
+        let enemy = getEnemies(this, this.key);
         if (enemy !== null) {
           enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
           this.enemies.add(enemy);
