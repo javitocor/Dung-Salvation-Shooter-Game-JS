@@ -5,6 +5,7 @@ import Fighter from '../Objects/enemies/fighter';
 import CarrierShip from '../Objects/enemies/carrier';
 import getEnemies from '../helpers/getEnemies';
 import getBosses from '../helpers/getBosses';
+import getScore from '../helpers/getScore';
 
 let life1;
 let life2;
@@ -25,11 +26,7 @@ export default class GameScene extends Phaser.Scene {
     life2 = this.add.image(700, 50, 'playerShip').setDisplaySize(50, 50);
     life3 = this.add.image(650, 50, 'playerShip').setDisplaySize(50, 50);
 
-    if (this.key === 'space') {
-      score = 0;
-    } else {
-      score = parseInt(JSON.parse(window.localStorage.getItem('score')));
-    }
+    score = getScore(this.key);
     const scoreBoard = this.add.bitmapText(10, 10, 'arcade', `Score: ${score}`, 14).setTint(0x08B0F8);
 
     this.anims.create({
