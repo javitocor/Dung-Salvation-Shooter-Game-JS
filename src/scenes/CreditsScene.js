@@ -13,7 +13,7 @@ export default class CreditsScene extends Phaser.Scene {
     this.madeByText2 = this.add.bitmapText(0, 0, 'arcade', "Thanks to Microverse", 26);
     this.madeByText3 = this.add.bitmapText(0, 0, 'arcade', "Thanks to Opengameart.org", 26);
     this.image1 = this.add.image(400, 200, 'logo');
-    this.image2 = this.add.image(400, 200, 'microverse');
+    this.image2 = this.add.image(400, 200, 'microverse').setDisplaySize(125, 125);
     this.image3 = this.add.image(400, 200, 'opengameart');
     this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
@@ -59,10 +59,16 @@ export default class CreditsScene extends Phaser.Scene {
     this.image1.setY(800);
     this.madeByText1.setY(850);
     this.madeByText2.setY(1100);
-    this.madeByText3.setY(1300);
-    this.image2.setY(1500);
-    this.madeByText4.setY(1800);
+    this.image2.setY(1300);
+    this.madeByText3.setY(1500);    
     this.image3.setY(1850);
+
+    this.creditsTween = this.tweens.add({
+      targets: this.creditsText,
+      y: -200,
+      duration: 3000,
+      delay: 1000,
+    });
 
 
     this.imageTween1 = this.tweens.add({
@@ -87,30 +93,23 @@ export default class CreditsScene extends Phaser.Scene {
     });
 
     this.madeByTween3 = this.tweens.add({
-      targets: this.madeByText3,
+      targets: this.image2,
       y: -200,
       duration: 25000,
       delay: 1000,
     });
 
     this.imageTween2 = this.tweens.add({
-      targets: this.image2,
+      targets: this.madeByText3,
       y: -200,
       duration: 28800,
-      delay: 1000,
-    });
-
-    this.madeByTween4 = this.tweens.add({
-      targets: this.madeByText4,
-      y: -200,
-      duration: 35000,
       delay: 1000,
     });
 
     this.imageTween3 = this.tweens.add({
       targets: this.image3,
       y: -200,
-      duration: 38800,
+      duration: 32000,
       delay: 1000,
       onComplete: (() => {
         this.scene.start('Title');
