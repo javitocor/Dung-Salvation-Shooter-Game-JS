@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import Button from '../objects/Button';
+import Button from '../Objects/Button';
 import {
   getScore
 } from '../helpers/leaderboard';
