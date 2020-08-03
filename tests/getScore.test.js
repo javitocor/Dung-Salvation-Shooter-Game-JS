@@ -1,7 +1,7 @@
 import getScore from '../src/helpers/getScore';
 
 describe('Testing GetStore function', ()=>{
-  it('Should return 0 if the first stage', () =>{
+  it('Should return 0 if is the first stage', () =>{
     expect(getScore('space')).toBe(0);
   });
   it('Should clear the localStorage when it is the first stage', ()=>{
