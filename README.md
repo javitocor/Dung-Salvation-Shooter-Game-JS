@@ -24,13 +24,13 @@
 >  Shooter game built with Javascript using Phaser and Webpack. Capstone Project for Microverse on the top of my Javascript knowledge.
 
 Landing Page:
-![screenshot](./assets/screenshot1.png)
+![screenshot](./assets/screenshots/title.png)
 
-Actual Weather:
-![screenshot](./assets/screenshot2.png)
+First Stage:
+![screenshot](./assets/screenshots/game.png)
 
-5-Day Forecast:
-![screenshot](./assets/screenshot3.png)
+Animated GIF:
+![screenshot](./assets/screenshot/game.gif)
 
 ## Game Design Document
 

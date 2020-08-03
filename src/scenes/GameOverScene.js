@@ -16,7 +16,7 @@ export default class GameOverScene extends Phaser.Scene {
     this.title = this.add.bitmapText(this.game.config.width * 0.5, 128, 'arcade', "GAME OVER", 48);
     this.title.setOrigin(0.5);
 
-    this.restartButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
+    this.restartButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Mission1');
     this.titleButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Menu', 'Title');
 
   }
