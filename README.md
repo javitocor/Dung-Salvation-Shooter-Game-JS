@@ -30,6 +30,7 @@ First Stage:
 ![screenshot](./assets/screenshots/game.png)
 
 Animated GIF:
+![App Demo](./assets/screenshot/game.gif)
 ![screenshot](./assets/screenshot/game.gif)
 
 ## Game Design Document
