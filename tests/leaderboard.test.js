@@ -1,6 +1,6 @@
 import {
   getScore,
-  setScore
+  setScore,
 } from '../src/helpers/leaderboard';
 
 jest.mock('../src/helpers/leaderboard');
@@ -9,17 +9,17 @@ describe('Testing the API functionality', () => {
   it('returns the third user name', async () => {
     getScore.mockResolvedValue({
       result: [{
-          user: 'John Doe',
-          score: 42,
-        },
-        {
-          user: 'Peter Parker',
-          score: 35,
-        },
-        {
-          user: 'Wonder Woman',
-          score: 50,
-        },
+        user: 'John Doe',
+        score: 42,
+      },
+      {
+        user: 'Peter Parker',
+        score: 35,
+      },
+      {
+        user: 'Wonder Woman',
+        score: 50,
+      },
       ],
     });
     const user = await getScore();
@@ -29,17 +29,17 @@ describe('Testing the API functionality', () => {
   it('returns the score of the second user', async () => {
     getScore.mockResolvedValue({
       result: [{
-          user: 'John Doe',
-          score: 42,
-        },
-        {
-          user: 'Peter Parker',
-          score: 35,
-        },
-        {
-          user: 'Wonder Woman',
-          score: 50,
-        },
+        user: 'John Doe',
+        score: 42,
+      },
+      {
+        user: 'Peter Parker',
+        score: 35,
+      },
+      {
+        user: 'Wonder Woman',
+        score: 50,
+      },
       ],
     });
 

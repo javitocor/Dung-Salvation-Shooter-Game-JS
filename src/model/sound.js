@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 export default class Sound {
   constructor() {
     this._soundOn = true;

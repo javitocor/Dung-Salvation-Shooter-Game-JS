@@ -21,7 +21,7 @@ class Game extends Phaser.Game {
     const model = new Sound();
     this.globals = {
       model,
-      bgMusic: null
+      bgMusic: null,
     };
     this.scene.add('Boot', BootScene);
     this.scene.add('Preloader', PreloaderScene);

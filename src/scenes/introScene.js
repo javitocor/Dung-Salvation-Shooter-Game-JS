@@ -43,4 +43,4 @@ export default class IntroScene extends Phaser.Scene {
       this.scene.start('DialogueIntro1');
     }
   }
-};
+}

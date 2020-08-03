@@ -1,5 +1,8 @@
+/* eslint-disable no-empty */
+/* eslint-disable consistent-return */
 import 'regenerator-runtime';
-const fetch = require("node-fetch");
+
+const fetch = require('node-fetch');
 
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/FjlaeYi14T6wTlmel7ig/scores/';
 
@@ -14,7 +17,7 @@ export const setScore = async (playerName = '', gameScore = 0) => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(info)
+    body: JSON.stringify(info),
   };
   try {
     const response = await fetch(url, settings);
@@ -23,16 +26,15 @@ export const setScore = async (playerName = '', gameScore = 0) => {
   } catch (e) {
     return e;
   }
-}
+};
 
 export const getScore = async () => {
   try {
     const response = await fetch(url, {
-      mode: 'cors'
+      mode: 'cors',
     });
     const data = await response.json();
     return data.result;
-  } catch (error) {
-    console.error('Error:', error);
+  } catch (e) {
   }
-}
+};

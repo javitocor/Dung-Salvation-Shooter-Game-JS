@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
 import {
-  getScore
+  getScore,
 } from '../helpers/leaderboard';
 
 export default class LeaderboardScene extends Phaser.Scene {
@@ -17,11 +17,11 @@ export default class LeaderboardScene extends Phaser.Scene {
       loading.destroy();
       scores.sort((a, b) => b.score - a.score);
       this.add.bitmapText(100, 20, 'arcade', 'RANK  SCORE   NAME').setTint(0x08B0F8);
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5; i += 1) {
         this.add.bitmapText(100, 90 * (i + 1), 'arcade', ` ${i + 1}     ${scores[i].score}   ${scores[i].user}`).setTint(0x08B0F8);
       }
-    }).catch((e) => {
-      console.log('Error:', e);
+    }).catch(() => {
+
     });
   }
 }

@@ -1,26 +1,27 @@
+import Phaser from 'phaser';
 import Entity from '../Entities';
 import EnemyLaser from '../../helpers/enemyLaser';
 
 export default class CarrierShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, "carrier", "CarrierShip");
-    this.play("carrier");
+    super(scene, x, y, 'carrier', 'CarrierShip');
+    this.play('carrier');
 
     this.body.velocity.y = Phaser.Math.Between(50, 250);
 
     this.shootTimer = this.scene.time.addEvent({
       delay: 1500,
-      callback: function () {
-        var laser = new EnemyLaser(
+      callback() {
+        const laser = new EnemyLaser(
           this.scene,
           this.x,
-          this.y
+          this.y,
         );
         laser.setScale(this.scaleX);
         this.scene.enemyLasers.add(laser);
       },
       callbackScope: this,
-      loop: true
+      loop: true,
     });
   }
 

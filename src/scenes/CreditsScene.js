@@ -10,8 +10,8 @@ export default class CreditsScene extends Phaser.Scene {
     this.cameras.main.setBackgroundColor('#000111');
     this.creditsText = this.add.bitmapText(0, 0, 'arcade', 'Credits', 32);
     this.madeByText1 = this.add.bitmapText(0, 0, 'arcade', 'Created By: Javier Correas', 26);
-    this.madeByText2 = this.add.bitmapText(0, 0, 'arcade', "Thanks to Microverse", 26);
-    this.madeByText3 = this.add.bitmapText(0, 0, 'arcade', "Thanks to Opengameart.org", 26);
+    this.madeByText2 = this.add.bitmapText(0, 0, 'arcade', 'Thanks to Microverse', 26);
+    this.madeByText3 = this.add.bitmapText(0, 0, 'arcade', 'Thanks to Opengameart.org', 26);
     this.image1 = this.add.image(400, 200, 'logo');
     this.image2 = this.add.image(400, 200, 'microverse').setDisplaySize(125, 125);
     this.image3 = this.add.image(400, 200, 'opengameart');
@@ -55,12 +55,11 @@ export default class CreditsScene extends Phaser.Scene {
     );
 
 
-
     this.image1.setY(800);
     this.madeByText1.setY(850);
     this.madeByText2.setY(1100);
     this.image2.setY(1300);
-    this.madeByText3.setY(1500);    
+    this.madeByText3.setY(1500);
     this.image3.setY(1850);
 
     this.creditsTween = this.tweens.add({

@@ -12,6 +12,6 @@ const getBosses = (scene, key) => {
     boss = new Boss3(scene);
   }
   return boss;
-}
+};
 
 export default getBosses;

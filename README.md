@@ -105,7 +105,7 @@ Kindly check my Game Design Document [GDD](assets/docs/gamedesigndocument.md)
 ### Run tests
 
 - Run ```npm test``` on the root directory to run all the tests.
-- Run `npm test -- --verbose` on the root directory to run all the tests and see for what is eahc test.
+- Run `npm test -- --verbose` on the root directory to run all the tests and see for what it is each test.
 - Run ```npm test testfile.test.js ``` on root directory to run test for a single file.
 
 ## Future features

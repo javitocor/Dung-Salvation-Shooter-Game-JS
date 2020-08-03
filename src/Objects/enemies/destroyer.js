@@ -1,25 +1,26 @@
+import Phaser from 'phaser';
 import EnemyLaser from '../../helpers/enemyLaser';
 import Entity from '../Entities';
 
 export default class Destroyer extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, "destroyer", "Destroyer");
-    this.play("destroyer");
+    super(scene, x, y, 'destroyer', 'Destroyer');
+    this.play('destroyer');
 
     this.body.velocity.y = Phaser.Math.Between(50, 100);
 
     this.shootTimer = this.scene.time.addEvent({
       delay: 1200,
-      callback: function () {
-        var laser = new EnemyLaser(
+      callback() {
+        const laser = new EnemyLaser(
           this.scene,
           this.x - 2,
-          this.y - 2
+          this.y - 2,
         );
-        var laser2 = new EnemyLaser(
+        const laser2 = new EnemyLaser(
           this.scene,
           this.x + 2,
-          this.y + 2
+          this.y + 2,
         );
         laser.setScale(this.scaleX);
         this.scene.enemyLasers.add(laser);
@@ -27,7 +28,7 @@ export default class Destroyer extends Entity {
         this.scene.enemyLasers.add(laser2);
       },
       callbackScope: this,
-      loop: true
+      loop: true,
     });
   }
 
