@@ -106,6 +106,7 @@ Additional description about the project and its features.
 ### Run tests
 
 - Run ```npm test``` on the root directory to run all the tests.
+- Run `npm test -- --verbose` on the root directory to run all the tests and see what does each test.
 - Run ```npm test testfile.test.js ``` on root directory to run test for a single file.
 
 ## Future features
