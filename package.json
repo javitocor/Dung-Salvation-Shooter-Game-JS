@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --config webpack/base.js --open",
+    "start": "npm run build && webpack-dev-server",
     "test": "jest",
     "heroku-prebuild": "npm install --dev"
   },
@@ -43,5 +43,6 @@
     "phaser": "^3.24.1",
     "phaser3-rex-plugins": "^1.1.21",
     "regenerator-runtime": "^0.13.7"
-  }
+  },
+  "heroku-run-build-script": true
 }
