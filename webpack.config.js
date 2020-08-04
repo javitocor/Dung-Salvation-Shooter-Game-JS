@@ -1,32 +1,32 @@
-const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-  CleanWebpackPlugin,
-} = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
+    rules: [
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: ['file-loader'],
       },
-    },
-    {
-      test: [/\.vert$/, /\.frag$/],
-      use: 'raw-loader',
-    },
-    {
-      test: /\.(gif|png|jpe?g|svg|xml)$/i,
-      use: 'file-loader',
-    },
+      {
+        test: /\.(mjs|js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+
+        options: {
+          presets: [
+            '@babel/preset-env',
+            {
+              plugins: ['@babel/plugin-proposal-class-properties'],
+            },
+          ],
+        },
+      },
     ],
   },
 };

@@ -75,7 +75,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    // this.load.bitmapFont('arcade', 'assets/arcade.png', 'assets/arcade.xml');
+    this.load.bitmapFont('arcade', 'assets/arcade.png', 'assets/arcade.xml');
 
     this.load.image('logo2', 'assets/logo2.png');
     this.load.image('microverse', 'assets/microverse.png');
@@ -107,11 +107,11 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    // this.load.audio('bgMusic', 'assets/Afrika Bambaataa & Soul Sonic Force - Planet Rock 1982 first techno-funk hit.mp3');
-    // this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
-    // this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
-    // this.load.audio('lasers', 'assets/game/loop-1mp3.mp3');
-    // this.load.audio('missiles', 'assets/game/loop-3mp3.mp3');
+    this.load.audio('bgMusic', 'assets/Afrika Bambaataa & Soul Sonic Force - Planet Rock 1982 first techno-funk hit.mp3');
+    this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
+    this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
+    this.load.audio('lasers', 'assets/game/loop-1mp3.mp3');
+    this.load.audio('missiles', 'assets/game/loop-3mp3.mp3');
 
     this.load.html('nameform', 'assets/text/nameform.html');
   }
