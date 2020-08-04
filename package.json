@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server  --config webpack/base.js --open"
+    "start": "webpack-dev-server --config webpack/base.js --open"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "phaser": "^3.24.1",
     "phaser3-rex-plugins": "^1.1.21",
