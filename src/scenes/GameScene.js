@@ -86,7 +86,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 2000,
+      delay: 20000,
       callback() {
         this.scene.pause();
         this.scene.launch(this.bossText);
