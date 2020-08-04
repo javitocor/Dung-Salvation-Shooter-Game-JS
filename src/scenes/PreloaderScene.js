@@ -107,7 +107,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.audio('bgMusic', 'assets/Daft Punk - Best of - 11 Aerodynamic.mp3');
+    this.load.audio('bgMusic', 'assets/DaftPunk-Bestof-11Aerodynamic.mp3');
     this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
     this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
     this.load.audio('laser', 'assets/game/sndLaser.wav');
