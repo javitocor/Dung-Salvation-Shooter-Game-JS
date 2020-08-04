@@ -4,9 +4,11 @@
   "description": "Shooter game built with Javascript using Phaser and Webpack. Capstone Project for Microverse on the top of my Javascript knowledge.",
   "main": "src/index.js",
   "scripts": {
+    "build": "webpack",
+    "dev": "npm run build && webpack-dev-server --port=8080",
+    "start": "npm run build && webpack-dev-server && node server.js",
     "test": "jest",
-    "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --config webpack/base.js --open"
+    "heroku-prebuild": "npm install --dev"
   },
   "repository": {
     "type": "git",
