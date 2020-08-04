@@ -10,6 +10,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(ogg|wav|mp3)$/,
+        use: ['url-loader'],
+      },
+      {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: ['file-loader'],
       },

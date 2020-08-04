@@ -115,7 +115,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.load.html('nameform', 'assets/text/nameform.html');
 
-    // this.game.sound.setDecodedCallback(['missiles', 'lasers', 'explosion2', 'explosion1', 'bgMusic'], this.ready(), this);
+    this.sound.setDecodedCallback(['missiles', 'lasers', 'explosion2', 'explosion1', 'bgMusic'], this.ready(), this);
   }
 
   ready() {

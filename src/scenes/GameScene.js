@@ -36,7 +36,7 @@ export default class GameScene extends Phaser.Scene {
       frameRate: 20,
       repeat: 0,
     });
-    this.sound.on('decodedall');
+
     this.sfx = {
       explosions: [
         this.sound.add('explosion1', {
