@@ -46,10 +46,10 @@ export default class GameScene extends Phaser.Scene {
           volume: 0.7,
         }),
       ],
-      laser: this.sound.add('laser', {
+      laser: this.sound.add('lasers', {
         volume: 0.5,
       }),
-      missile: this.sound.add('missile', {
+      missile: this.sound.add('missiles', {
         volume: 0.3,
       }),
     };
