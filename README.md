@@ -44,6 +44,7 @@ Kindly check my Game Design Document [GDD](assets/docs/gamedesigndocument.md)
 - PHASER 3
 - NPM
 - WEBPACK
+- EXPRESS
 - BOOTSTRAP
 - JEST
 - GITHUB ACTIONS
@@ -51,8 +52,6 @@ Kindly check my Game Design Document [GDD](assets/docs/gamedesigndocument.md)
 ## Live Demo
 
 [Live Demo Link](https://javitocor.github.io/Dung-Salvation-Shooter-Game-JS/) :point_left:
-
-[Video Presentation]() :point_left:
 
 ## Instructions to Play
 
