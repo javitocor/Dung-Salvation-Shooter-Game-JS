@@ -37,7 +37,7 @@ export default class GameScene extends Phaser.Scene {
       repeat: 0,
     });
 
-    this.sfx = {
+    /* this.sfx = {
       explosions: [
         this.sound.add('explosion1', {
           volume: 0.7,
@@ -49,10 +49,10 @@ export default class GameScene extends Phaser.Scene {
       laser: this.sound.add('lasers', {
         volume: 0.5,
       }),
-      missile: this.sound.add('missiles', {
+      missiles: this.sound.add('missiles', {
         volume: 0.3,
       }),
-    };
+    }; */
 
     this.player = new Player(
       this,
