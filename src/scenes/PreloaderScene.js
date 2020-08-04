@@ -107,7 +107,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.audio('bgMusic', 'assets/Afrika Bambaataa & Soul Sonic Force - Planet Rock 1982 first techno-funk hit.mp3');
+    // this.load.audio('bgMusic', 'assets/Afrika Bambaataa & Soul Sonic Force - Planet Rock 1982 first techno-funk hit.mp3');
     // this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
     // this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
     // this.load.audio('lasers', 'assets/game/loop-1mp3.mp3');

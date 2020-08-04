@@ -80,7 +80,7 @@ export default class CreditsScene extends Phaser.Scene {
     this.madeByTween1 = this.tweens.add({
       targets: this.madeByText1,
       y: -200,
-      duration: 14000,
+      duration: 15000,
       delay: 1000,
     });
 
