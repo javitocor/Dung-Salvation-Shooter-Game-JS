@@ -86,34 +86,36 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.image('tintin', 'assets/commander.png');
     this.load.image('princess', 'assets/princess.png');
-    this.load.image('boss', 'dist/assets/game/boss.PNG');
-    this.load.image('boss2', 'dist/assets/game/boss2.png');
-    this.load.image('boss3', 'dist/assets/game/boss3.png');
-    this.load.image('carrier', 'dist/assets/game/carrier.png');
-    this.load.image('destroyer', 'dist/assets/game/destroyer.png');
-    this.load.image('fighter', 'dist/assets/game/fighter.png');
-    this.load.image('playerShip', 'dist/assets/game/playerShip.png');
-    this.load.image('space', 'dist/assets/game/Space-Background-2.jpg');
-    this.load.image('planet', 'dist/assets/game/Space-Background-4.jpg');
-    this.load.image('field', 'dist/assets/game/fractal-alien-city-2.png');
-    this.load.image('bg2', 'dist/assets/game/Space-Background-3.jpg');
-    this.load.image('starfield', 'dist/assets/game/starfield.png');
-    this.load.image('laserEnemy', 'dist/assets/game/sprLaserEnemy0.png');
-    this.load.image('missile', 'dist/assets/game/missile.png');
-    this.load.image('missile2', 'dist/assets/game/missile2.png');
-    this.load.image('missile3', 'dist/assets/game/missile3.png');
-    this.load.image('laserPlayer', 'dist/assets/game/sprLaserPlayer.png');
-    this.load.spritesheet('explosion', 'dist/assets/game/explosion.png', {
+    this.load.image('boss', 'assets/game/boss.PNG');
+    this.load.image('boss2', 'assets/game/boss2.png');
+    this.load.image('boss3', 'assets/game/boss3.png');
+    this.load.image('carrier', 'assets/game/carrier.png');
+    this.load.image('destroyer', 'assets/game/destroyer.png');
+    this.load.image('fighter', 'assets/game/fighter.png');
+    this.load.image('playerShip', 'assets/game/playerShip.png');
+    this.load.image('space', 'assets/game/Space-Background-2.jpg');
+    this.load.image('planet', 'assets/game/Space-Background-4.jpg');
+    this.load.image('field', 'assets/game/fractal-alien-city-2.png');
+    this.load.image('bg2', 'assets/game/Space-Background-3.jpg');
+    this.load.image('starfield', 'assets/game/starfield.png');
+    this.load.image('laserEnemy', 'assets/game/sprLaserEnemy0.png');
+    this.load.image('missile', 'assets/game/missile.png');
+    this.load.image('missile2', 'assets/game/missile2.png');
+    this.load.image('missile3', 'assets/game/missile3.png');
+    this.load.image('laserPlayer', 'assets/game/sprLaserPlayer.png');
+    this.load.spritesheet('explosion', 'assets/game/explosion.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
     this.load.audio('bgMusic', 'assets/DaftPunk-Bestof-11Aerodynamic.mp3');
-    this.load.audio('explosion1', 'dist/assets/game/sndExplode0.wav');
-    this.load.audio('explosion2', 'dist/assets/game/sndExplode1.wav');
-    this.load.audio('lasers', 'dist/assets/game/sndLaser.wav');
-    this.load.audio('missiles', 'dist/assets/game/missile.ogg');
+    this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
+    this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
+    this.load.audio('lasers', 'assets/game/sndLaser.wav');
+    this.load.audio('missiles', 'assets/game/missile.ogg');
 
     this.load.html('nameform', 'assets/text/nameform.html');
+
+    this.game.sound.setDecodedCallback(['missiles', 'lasers', 'explosion2', 'explosion1', 'bgMusic'], this.ready(), this);
   }
 
   ready() {
