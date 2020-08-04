@@ -21,6 +21,13 @@ export default class GameScene extends Phaser.Scene {
     this.boss = boss;
   }
 
+  preload() {
+    this.load.audio('explosion1', 'assets/game/sndExplode0.wav');
+    this.load.audio('explosion2', 'assets/game/sndExplode1.wav');
+    this.load.audio('lasers', 'assets/game/sndLaser.wav');
+    this.load.audio('missiles', 'assets/game/missile.ogg');
+  }
+
   create() {
     this.add.image(400, 300, this.key).setDisplaySize(800, 600);
     life1 = this.add.image(750, 50, 'playerShip').setDisplaySize(50, 50);
