@@ -55,16 +55,6 @@ export default class DialogueScene extends Phaser.Scene {
       .layout()
       .popUp(1000);
 
-    const tween = this.tweens.add({
-      targets: dialog,
-      scaleX: 1,
-      scaleY: 1,
-      ease: 'Bounce',
-      duration: 1000,
-      repeat: 0,
-      yoyo: false,
-    });
-
     this.print = this.add.text(0, 0, '');
     dialog
       .on('button.click', () => {
@@ -74,12 +64,6 @@ export default class DialogueScene extends Phaser.Scene {
         } else {
           this.scene.start(this.nextScene);
         }
-      })
-      .on('button.over', () => {
-        button.getElement('background').setStrokeStyle(1, 0xffffff);
-      })
-      .on('button.out', () => {
-        button.getElement('background').setStrokeStyle();
       });
   }
 }
