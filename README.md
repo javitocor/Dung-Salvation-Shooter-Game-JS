@@ -111,6 +111,11 @@ Kindly check my Game Design Document [GDD](assets/docs/gamedesigndocument.md)
 ## Future features
 
 - Add extra stages, weapons and effects.
+- Add more enemies
+- Add images in the dialogues scenes
+- Modify the assets
+- Add animations
+- Add a pause scene 
 
 ## Author
 
