@@ -100,6 +100,7 @@ Kindly check my Game Design Document [GDD](assets/docs/gamedesigndocument.md)
 - Cd into the folder
 - Run `npm install`
 - Run `npm start`
+- On your browser, make sure you point to the right address (i.e: http://localhost:8080/)
 
 ### Run tests
 
