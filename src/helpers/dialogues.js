@@ -37,7 +37,7 @@ const dialogue = {
     intro: {
       title: 'Mission 3',
       content: 'Rebel Base',
-      description: 'The Rebel base is located in a complicated area,\nCpt.Tintin must use his best skills and\nsave the Princess.',
+      description: 'The Rebel base is located in a difficult area,\nCpt.Tintin must use his best skills and\nsave the Princess.',
     },
     boss: {
       title: 'Boss 3',
