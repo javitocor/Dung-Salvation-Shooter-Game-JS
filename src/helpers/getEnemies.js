@@ -26,26 +26,28 @@ const getEnemies = (scene, key) => {
         0,
       );
     }
-  } else if (number >= 3) {
-    enemy = new Destroyer(
-      scene,
-      Phaser.Math.Between(0, scene.game.config.width),
-      0,
-    );
-  } else if (number >= 5) {
-    if (scene.getEnemiesByType('fighter').length < 5) {
-      enemy = new Fighter(
+  } else if (key === 'field') {
+    if (number >= 3) {
+      enemy = new Destroyer(
+        scene,
+        Phaser.Math.Between(0, scene.game.config.width),
+        0,
+      );
+    } else if (number >= 5) {
+      if (scene.getEnemiesByType('fighter').length < 5) {
+        enemy = new Fighter(
+          scene,
+          Phaser.Math.Between(0, scene.game.config.width),
+          0,
+        );
+      }
+    } else {
+      enemy = new CarrierShip(
         scene,
         Phaser.Math.Between(0, scene.game.config.width),
         0,
       );
     }
-  } else {
-    enemy = new CarrierShip(
-      scene,
-      Phaser.Math.Between(0, scene.game.config.width),
-      0,
-    );
   }
   return enemy;
 };
